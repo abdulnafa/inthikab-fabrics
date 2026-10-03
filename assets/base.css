@@ -5385,6 +5385,22 @@ top: 50vh !important;
         color: rgba(var(--color-trans-text), 1);
     }
 
+    /* The native menu can retain the original Winter URL in link.current even
+       after the visible href is mapped to Winter Collection. Do not show that
+       stale active state on the homepage; keep hover feedback intact. */
+    .page-index .header__inline-menu a[href*="/collections/winter-collection"][aria-current="page"]:not(:hover) {
+        color: rgba(var(--color-trans-text), 1) !important;
+        background: transparent !important;
+    }
+
+    .page-index .header__inline-menu a[href*="/collections/winter-collection"][aria-current="page"]:not(:hover)::after {
+        transform: scaleX(0) !important;
+    }
+
+    .page-index .header__inline-menu a[href*="/collections/winter-collection"][aria-current="page"]:not(:hover) > span {
+        color: inherit !important;
+    }
+
     .header__inline-menu .bottom-menu-items .header__submenu {
         z-index: 30;
         min-width: 22rem;

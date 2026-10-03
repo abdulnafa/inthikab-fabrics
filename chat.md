@@ -277,3 +277,5 @@
 - Uploaded only `assets/sponsored-product.css` to live theme `176975937559`; remote read-back matched local SHA-256 `E6046B527018D142DA0A0A19FFEE23084FCE78CFC834CC0F9FD53C34C0A20232`. No publish was performed.
 - Client requested homepage product image carousels with visible dots and auto-scroll. Added a scoped 4.2-second per-card carousel using existing media, with hover/focus pause and dot controls; archive/product pages remain unchanged.
 - Uploaded only `assets/sponsored-product.css` and `assets/wbcustom.js` to live theme `176975937559`; remote read-back matched local (CSS `BFB43BBFAE56CCA229EE24CD8B3568531D42E51E3332F25B5E035B74D0F227A3`, JS `6317D1292C820CDCA203EFD4EFBA40CA51562CC8DC45B696FB9C460516CA89EE`).
+- Client reported Winter was highlighted on the homepage. Added a homepage-only correction for the stale native active state; Winter Collection linking and hover behavior remain intact.
+- Uploaded only `assets/base.css` to live theme `176975937559`; remote read-back matched local SHA-256 `0FE31862E118FA12D5F99EA38BD36C77E0E859C343F264E52334D5B38B24D252`. No publish was performed.

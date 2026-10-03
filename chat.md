@@ -266,3 +266,10 @@
 - Added the `product-list--premium` hook to the dedicated list-view Liquid section and to the grid/list toggle script, so List view receives the same treatment from the standard collection page.
 - Uploaded only `assets/component-product-grid.css`, `assets/wbcustom.js` and `sections/main-collection-list-view.liquid` to live theme `176975937559`; remote read-back matched local (CSS `ABD6F3A0B6752316E47B5346AA7C52EA931FEDDE11D76C31AD187B95FD696DDE`, JS `33CA41C8CA78F59FD2D5AAF07C7A349DD9111573F2F91E774FDF0EFC0AFB5B24`, Liquid `1F9651E6C0EBC2092B7C4D6187EFE382CC41C9F2960B3632DFBF8B288E159F69`).
 - User will test in their browser; no browser test or publish was run automatically.
+
+### 2026-10-03 - Homepage product section clarification (Completed)
+
+- Client reported the homepage section had not changed. Confirmed the prior update targeted collection archive List view, not the homepage.
+- Located the homepage section as sponsored collection `exclusive-offer-section-home-page`. The rendered class hook was too narrow, so it now uses the reliable homepage template condition (`template.name == 'index'`) while retaining the same Shopify product/carousel behavior.
+- Uploaded only `assets/sponsored-product.css` and `sections/sponsored-product.liquid` to live theme `176975937559`. After the screenshot confirmed the first hook did not render, corrected the hook to `template.name == 'index'` and re-uploaded only the Liquid file; final remote read-back matched local (CSS `4F29BCF2AC4BAA39E7D47F941A2B8BFB7A6BF988DD1EAB600C4DFEC2D7994373`, Liquid `4EEDF1B2DB8BB36BB136B20597837DFCDE6B294FD2047F26FE8E66C0FBB94119`).
+- User will hard-refresh and test the homepage; no browser test was run automatically.

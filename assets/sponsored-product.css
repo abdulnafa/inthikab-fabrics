@@ -282,3 +282,175 @@
         font-size: calc(var(--font-body-scale) * 20px);
     }
 }
+
+/* Homepage exclusive-products showcase: keep its horizontal catalogue cards balanced and polished. */
+.sponsored-section--exclusive-home .section-content-bg {
+    padding: clamp(1.6rem, 3vw, 3.6rem);
+    border: 1px solid rgba(var(--color-foreground), .08);
+    border-radius: clamp(1.6rem, 2vw, 2.4rem);
+    background: linear-gradient(145deg, rgb(var(--color-background)) 0%, rgba(var(--color-foreground), .025) 100%);
+}
+
+.sponsored-section--exclusive-home .heading-top {
+    align-items: flex-end;
+    margin-bottom: clamp(1.8rem, 3vw, 3.2rem);
+}
+
+.sponsored-section--exclusive-home .heading h2 {
+    max-width: 18ch;
+    margin: 0;
+    font-size: clamp(2.6rem, 3.5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: -.035em;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper {
+    row-gap: clamp(1.4rem, 2vw, 2.4rem);
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card {
+    width: 100%;
+    min-width: 0;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card:not(.ratio) {
+    min-height: 25rem;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(var(--color-foreground), .09);
+    border-radius: 1.8rem;
+    background: rgb(var(--color-background));
+    box-shadow: 0 10px 30px rgba(14, 23, 51, .03);
+    transition: transform var(--duration-long) ease, border-color var(--duration-long) ease, box-shadow var(--duration-long) ease;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container:hover .card,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container:focus-within .card {
+    transform: translateY(-3px);
+    border-color: rgba(var(--color-foreground), .18);
+    box-shadow: 0 16px 36px rgba(14, 23, 51, .08);
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__inner {
+    flex: 0 0 36%;
+    width: 36%;
+    min-width: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: rgba(var(--color-foreground), .035);
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__inner.ratio::before {
+    display: none;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .product__media-item,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media .media {
+    height: 100%;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media .media img {
+    transition: transform var(--duration-long) ease;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container:hover .card__media .media img:first-child:only-child {
+    transform: scale(1.045);
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__content.wbproductdes {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    min-width: 0;
+    padding: clamp(1.5rem, 2.15vw, 2.8rem);
+    text-align: left;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__information {
+    min-width: 0;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .product__vendor {
+    margin: 0 0 .8rem;
+    color: rgba(var(--color-foreground), .58);
+    font-size: 1rem;
+    font-weight: var(--font-body-weight-semibold);
+    letter-spacing: .14em;
+    line-height: 1.35;
+    text-transform: uppercase;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__heading {
+    margin: 0;
+    font-size: clamp(1.55rem, 1.4vw, 2rem);
+    font-weight: var(--font-heading-weight);
+    line-height: 1.28;
+    letter-spacing: -.015em;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__heading a {
+    text-decoration: none;
+    text-wrap: balance;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card-information.card_price_bottom {
+    margin-top: .9rem;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .price,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .price .price-item {
+    font-size: clamp(1.3rem, 1.2vw, 1.65rem);
+    font-weight: var(--font-body-weight-semibold);
+}
+
+@media screen and (max-width: 767px) {
+    .sponsored-section--exclusive-home .section-content-bg {
+        padding: 1.4rem;
+        border-radius: 1.6rem;
+    }
+
+    .sponsored-section--exclusive-home .heading-top {
+        margin-bottom: 1.8rem;
+    }
+
+    .sponsored-section--exclusive-home .heading h2 {
+        font-size: clamp(2.2rem, 7vw, 3rem);
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card:not(.ratio) {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__inner {
+        flex-basis: auto;
+        width: 100%;
+        aspect-ratio: 1.12 / 1;
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__content.wbproductdes {
+        width: 100%;
+        padding: 1.4rem;
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .product__vendor {
+        margin-bottom: .55rem;
+        font-size: .95rem;
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__heading {
+        font-size: 1.45rem;
+    }
+
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .price,
+    .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .price .price-item {
+        font-size: 1.25rem;
+    }
+}

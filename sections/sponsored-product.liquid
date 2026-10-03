@@ -49,7 +49,7 @@
   endif
 
 -%}
-<div class="sponsored-section color-{{ section.settings.color_scheme }} section-{{ section.id }} {% if section.settings.secondary_background %} background-secondary{% else %} gradient{% endif %}">
+<div class="sponsored-section color-{{ section.settings.color_scheme }} section-{{ section.id }}{% if template.name == 'index' %} sponsored-section--exclusive-home{% endif %}{% if section.settings.secondary_background %} background-secondary{% else %} gradient{% endif %}">
   <div class="collection sponsored-product section-{{ section.id }}-padding {% if section.settings.section_width == "mini_container" %}mini-container page-width{% elsif section.settings.section_width == "full_width" %} collection--full-width{% else %} page-width{% endif %}">
     <slider-component class="gradient color-{{ section.settings.color_scheme }} isolate section-content-bg slider-mobile-gutter{% if section.settings.section_width == "full_width" %} collection--full-width{% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <div class="heading-top">

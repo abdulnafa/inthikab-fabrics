@@ -230,3 +230,10 @@
 - The root now matches live theme `176975937559` exactly. No remote theme was deleted or changed, and no upload/publish was performed.
 - Future work should optimize this baseline one scoped change at a time; client review/testing remains the gate before any Shopify upload or publish.
 - Read-only integrity review counted 389 theme files (183 Liquid). Shopify-generated JSON comments were expected; no baseline file was “fixed” or reformatted. No browser/live test was run, per the client's testing workflow.
+
+### 2026-10-03 — live transparent logo contrast fix
+
+- Client requested that the `FABRICS` wordmark be white while the homepage header is transparent over the hero image; it was black only before the header changed to its scrolled white state.
+- Root cause was the black wordmark baked into the separate transparent-header PNG. Added a scoped white filter to local `assets/base.css`, preserving the separate sticky logo asset.
+- Uploaded only `assets/base.css` to live theme `176975937559` (no publish or other-file change). Remote read-back matches local SHA-256 `76BC8D1E4CAF0F67A62695B0E6E3666815D78E99966E31410FE4517DE603508E`.
+- Client should hard-refresh and visually confirm; assistant did not run browser testing.

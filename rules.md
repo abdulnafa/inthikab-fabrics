@@ -33,5 +33,10 @@ These rules apply to every task in this project.
    - Answer the client directly and to the point. Explain technical detail only when it affects their decision, timeline, cost, or required action.
    - Do not make irreversible, out-of-scope, or access-sensitive changes without clear approval.
 
+7. **Local code and live-store workflow**
+   - For code/theme changes, maintain the source in this local repository first and provide exact scoped Git commands; the client runs the Git push.
+   - When the client explicitly requests a live-store change, apply only the approved scoped change to the identified Shopify theme, record the theme ID and remote read-back, and keep the local source synchronized.
+   - Never delete or publish Shopify themes implicitly; live, draft and rollback themes must remain protected unless the client names the exact theme and explicitly authorizes the destructive action.
+
 
 

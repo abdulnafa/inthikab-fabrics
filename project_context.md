@@ -368,3 +368,10 @@
 - [x] Shopify remote state was not deleted, edited, uploaded, published, or renamed. Live theme, draft theme, and rollback themes remain untouched.
 - [x] Read-only integrity checks found 389 theme files (183 Liquid); Shopify-header comments were handled during JSON parsing, with 85/86 files parser-valid. The remaining `locales/en.default.schema.json` retains the live theme's original schema syntax and was not changed. `git diff --check` reported only normal LF/CRLF conversion warnings.
 - [ ] Pending: client review of the unchanged live baseline. Future optimization should be applied incrementally to this root and remain draft/review-first.
+
+### 2026-10-03 — live transparent-header logo contrast fix
+
+- [x] Client reported that `FABRICS` appeared black in the transparent homepage header but became correct after scrolling. Diagnosis: the transparent header uses a separate raster `transparent_logo` (`intikhab_wihte_and_black.png`); the black wordmark is baked into that PNG, while the scrolled header swaps to the normal logo asset.
+- [x] Added a narrowly scoped rule to local `assets/base.css`: `.page-index .tranhead.transparent_header .transparent-logo-wrapper img { filter: brightness(0) invert(1); }`. It affects only the transparent homepage logo; the sticky/white-header logo remains unchanged.
+- [x] Uploaded only `assets/base.css` directly to live theme `176975937559` with `--nodelete` and no publish action. Remote read-back SHA-256 matches local source: `76BC8D1E4CAF0F67A62695B0E6E3666815D78E99966E31410FE4517DE603508E`.
+- [ ] Client should hard-refresh the live homepage and confirm the transparent hero logo at the exact viewport. No browser test was run by the assistant.

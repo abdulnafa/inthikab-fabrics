@@ -4387,6 +4387,11 @@ top: 50vh !important;
 .page-index .tranhead.transparent_header .transparent-logo-wrapper{
     display: block;
 }
+/* Keep the transparent homepage logo legible over the hero image. The sticky
+   logo uses a separate asset and intentionally keeps its original colors. */
+.page-index .tranhead.transparent_header .transparent-logo-wrapper img{
+    filter: brightness(0) invert(1);
+}
 .mega-menu__list--condensed .col-12 .header__menu-item{
     padding-left: 15px;
 }

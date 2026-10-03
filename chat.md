@@ -287,3 +287,7 @@
 - Client requested a four-card premium archive layout inspired by established fabric retailers, with smaller media, image dots/auto-scroll and a hover cart icon.
 - Keep native collection filters, sort, pagination, product URLs, quick view and variants unchanged; scope the work to the standard collection archive.
 - [x] Uploaded only the archive files to live theme `176975937559` with `--nodelete`; remote read-back matched local SHA-256 for `templates/collection.json`, `sections/main-collection-product-grid.liquid`, `snippets/card-product.liquid`, `assets/template-collection.css` and `assets/wbcustom.js`. Theme Check found no new errors. Client will perform the browser visual check.
+
+### 2026-10-03 - Git push branch correction (Completed)
+
+- The archive commit is on local branch `staging`, which tracks `origin/staging`; `git push origin main` failed because no local `main` ref exists. The correct push target is `git push origin staging`.

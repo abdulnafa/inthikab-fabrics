@@ -119,11 +119,11 @@
             data-val="{{ value }}"
             tabindex="0"
             style="background-color: {{ colorswatchvalue }};{% if images[color_file_name] != blank %}  background-image: url({{ swatchimage | remove: " " }});{% endif %}">{{ value }}</label>
-      <span class="visually-hidden label-unavailable">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
         {% else %}
           <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="{% if block.settings.pills_style == 'fill' %}fillpill{% endif %} {% if option.selected_value == value %}active{% endif %}" {% if option.selected_value == value %} tabindex="0" {% endif %} data-value="{{ value }}">
             {{ value -}}
-            <span class="visually-hidden label-unavailable">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+            <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
           </label>
         {% endif %}
       {% else %}

@@ -9,12 +9,123 @@
  */
 {
   "sections": {
-    "intikhab_contact_pro": {
-      "type": "intikhab-contact-pro",
-      "settings": {}
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "image_banner_8M9CTh": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_yGBFfE": {
+          "type": "banner_with_text",
+          "settings": {
+            "image": "shopify://shop_images/contact_us_image.png",
+            "image_overlay_opacity": 70,
+            "banner_width": 100,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "CONTACT US",
+            "heading_size": "h0",
+            "text": "<p>Have a question about our collections or your order? Our support team is always happy to assist you.</p>",
+            "text_style": "body",
+            "button_label_1": "",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": true,
+            "container_overlay_opacity": 0,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_yGBFfE"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": true,
+        "enable_sidespace": false,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "left",
+        "image_height": "small",
+        "show_gap": true,
+        "section_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "6437b0a2-04b2-4bd5-aacf-68c948ceb2af": {
+      "type": "contact-form",
+      "blocks": {
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-text-1": {
+          "type": "text",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Name",
+            "required_field": false
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-email-1": {
+          "type": "email",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Email",
+            "required_field": true
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-phone-1": {
+          "type": "phone",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Phone",
+            "required_field": true
+          }
+        },
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-message-1": {
+          "type": "message",
+          "settings": {
+            "field_label": "",
+            "label_placeholder": "Message",
+            "required_field": false
+          }
+        }
+      },
+      "block_order": [
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-text-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-email-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-phone-1",
+        "template--20354182676802__6437b0a2-04b2-4bd5-aacf-68c948ceb2af-message-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "enable_gmap": true,
+        "contact_iframe_code": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3449.3639!2d73.079109!3d31.450366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922433c0c3b3c8b%3A0x6f0a6f0b8b8b8b8b!2sFaisalabad%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v0000000000000!5m2!1sen!2s\" width=\"715\" height=\"458\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\">\n</iframe>",
+        "enable_image": false,
+        "color_scheme": "background-1",
+        "padding_top": 32,
+        "padding_bottom": 44
+      }
     }
   },
   "order": [
-    "intikhab_contact_pro"
+    "main",
+    "image_banner_8M9CTh",
+    "6437b0a2-04b2-4bd5-aacf-68c948ceb2af"
   ]
 }

@@ -1,21 +1,431 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "modern_product": {
-      "type": "modern-product",
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "inventory_RU9bNA": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "text_style": "body",
+            "inventory_threshold": 10,
+            "show_inventory_quantity": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_colorswatch": false,
+            "text": "Size chart",
+            "page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "b0e0658f-43cb-4fb2-a63a-a185585271a3": {
+          "type": "offer",
+          "disabled": true,
+          "settings": {
+            "heading": "Unlock Exclusive Savings",
+            "icon": "clipboard",
+            "content": "<p><strong>Coupon Discount: 30% off</strong></p><p><strong>Applicable on: </strong>Orders above Rs. 999</p>",
+            "ofr_bgcolor": "#fff1ea",
+            "ofr_color": "#000000",
+            "heading1": "Claim Cashback",
+            "icon1": "silhouette",
+            "content1": "<p><strong>Get 5% Back With Amazon Pay</strong></p><p>Not applicable on EMI orders</p>",
+            "ofr_bgcolor1": "#edf3ed",
+            "ofr_color1": "#000000"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true,
+            "atc_btn_style": "solid"
+          }
+        },
+        "custom_liquid_zM7kNG": {
+          "type": "custom_liquid",
+          "name": "CTA Trust Enhance",
+          "settings": {
+            "custom_liquid": "<div style='border:1px solid rgba(0,0,0,.12);border-radius:10px;padding:14px 16px;background:#faf9f6'><p style='margin:0 0 10px;font-weight:600'>One quantity = one unstitched fabric cut in your selected color and cut length.</p><div style='display:flex;flex-wrap:wrap;gap:8px 16px;margin-bottom:10px;font-size:14px'><span>✓ Cash on Delivery</span><span>✓ Delivery in 3–4 working days</span><span>✓ Return/exchange requests within 14 days</span></div><p style='margin:0;font-size:14px'><strong>Save 5% on advance bank transfer:</strong> use code <strong>EXTRA5</strong>. Discount is valid after payment verification; COD remains available at the full order amount.</p></div>"
+          }
+        },
+        "complementary_CBHxPH": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Pairs well with",
+            "heading_size": "h2",
+            "make_collapsible_row": true,
+            "icon": "price_tag",
+            "product_list_limit": 10,
+            "products_per_page": 1,
+            "image_ratio": "square",
+            "show_secondary_image": false,
+            "display_product_type1": false,
+            "show_vendor": true,
+            "enable_quick_add": false
+          }
+        },
+        "e7537224-0afb-4025-af29-1feeccbb09f2": {
+          "type": "product_meta",
+          "disabled": true,
+          "settings": {
+            "show_vendor": true,
+            "display_product_type": true,
+            "display_tags": true
+          }
+        },
+        "e2d67773-ceb8-4e7a-be31-03a19f01f9c1": {
+          "type": "icon-with-text",
+          "disabled": true,
+          "settings": {
+            "layout": "horizontal",
+            "enable_border": false,
+            "icon_1": "dryer",
+            "heading_1": "Must Shrink",
+            "icon_2": "ruler",
+            "heading_2": "4.5 Meter",
+            "icon_3": "box",
+            "heading_3": "55  / 56 \""
+          }
+        },
+        "collapsible_tab_z8DRET": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "FABRIC & CARE",
+            "icon": "none",
+            "content": "<p>Designed to feel luxurious while remaining easy to maintain.</p><p><strong>Fabric composition:</strong></p><ul><li>Wool-blend outer for warmth and durability</li><li>Smooth inner lining for comfortable wear<br/></li></ul><p><strong>Care instructions:</strong></p><ul><li>Dry clean only</li><li>Do not bleach</li><li>Do not tumble dry</li><li>Steam or iron on low heat if needed</li><li>Store on a hanger to maintain shape</li></ul>",
+            "custom_liquid": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_XaQ7cC": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "FIT & SIZING",
+            "icon": "none",
+            "content": "<p>Designed with a flattering, tailored fit that complements the body while allowing comfortable layering.</p><ul><li>Fits true to size</li><li>Structured shoulders for a sharp profile</li><li>Mid-length cut for versatile styling</li><li>Model is wearing size <strong>M</strong></li></ul><p>If you are between sizes, we recommend sizing up for a relaxed fit.</p>",
+            "custom_liquid": "",
+            "page": ""
+          }
+        },
+        "collapsible_tab_8R4R3h": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "SHIPPING & RETURNS",
+            "icon": "none",
+            "content": "<ul><li>Free shipping on all orders above ₹5,000</li><li>Orders are processed within 24–48 hours</li><li>Delivery timelines vary by location</li></ul><p><strong>Returns & Exchanges:</strong></p><ul><li>Easy 7-day returns from the date of delivery</li><li>Item must be unused, unwashed, and in original condition</li><li>Sale items are eligible for exchange only</li></ul>",
+            "custom_liquid": "",
+            "page": ""
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_readmore": false
+          }
+        },
+        "d1d28115-3998-4f61-8e93-3974d09fe1a0": {
+          "type": "share_button",
+          "settings": {
+            "share_facebook": true,
+            "share_twitter": true,
+            "share_pinterest": true
+          }
+        }
+      },
+      "block_order": [
+        "inventory_RU9bNA",
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "b0e0658f-43cb-4fb2-a63a-a185585271a3",
+        "buy_buttons",
+        "custom_liquid_zM7kNG",
+        "complementary_CBHxPH",
+        "e7537224-0afb-4025-af29-1feeccbb09f2",
+        "e2d67773-ceb8-4e7a-be31-03a19f01f9c1",
+        "collapsible_tab_z8DRET",
+        "collapsible_tab_XaQ7cC",
+        "collapsible_tab_8R4R3h",
+        "description",
+        "d1d28115-3998-4f61-8e93-3974d09fe1a0"
+      ],
       "settings": {
-        "max_width": 1320,
-        "media_size": "large",
-        "gallery_layout": "columns",
-        "mobile_thumbnails": "hide",
-        "media_fit": "cover",
-        "image_zoom": "hover",
+        "enable_full_width": true,
         "enable_sticky_info": true,
-        "show_dynamic_checkout": true,
-        "trust_one": "Quality checked before dispatch",
-        "trust_two": "Easy returns within 14 days",
-        "trust_three": "Secure payment at checkout"
+        "media_size": "large",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "columns",
+        "media_position": "left",
+        "image_zoom": "hover",
+        "enable_border": false,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "shareb": false,
+        "enable_compact": false,
+        "color_scheme": "background-2",
+        "mobile_thumbnails": "one_columns",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "video_fGYYm4": {
+      "type": "video",
+      "blocks": {
+        "heading_MK9m3E": {
+          "type": "heading",
+          "settings": {
+            "heading": "Effortless Summer Sets",
+            "heading_size": "h1"
+          }
+        },
+        "text_w43a7A": {
+          "type": "text",
+          "settings": {
+            "text": "Lightweight fabrics and relaxed fits made to feel as good as they look—perfect for all-day wear.",
+            "text_style": "body"
+          }
+        },
+        "buttons_pw3zaR": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "View Styles",
+            "button_link_1": "shopify://collections",
+            "link_window": false,
+            "view_all_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "heading_MK9m3E",
+        "text_w43a7A",
+        "buttons_pw3zaR"
+      ],
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "full_width": true,
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": true,
+        "show_play_btn": true,
+        "auto_play_video": true,
+        "enable_controller": false,
+        "video_url": "",
+        "description": "",
+        "show_text_box": false,
+        "desktop_content_position": "bottom-right",
+        "desktop_content_alignment": "right",
+        "show_content": false,
+        "color_scheme": "accent-1",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_Hah7b4": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_wbDjXK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to Intikhab Fabrics",
+            "heading_size": "h1"
+          }
+        },
+        "text_KKxKjB": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Fine unstitched fabrics for the modern gentleman.Where quality, comfort, and timeless style come together.</h3>",
+            "text_style": "body"
+          }
+        },
+        "button_TzkBh8": {
+          "type": "button",
+          "settings": {
+            "button_label": "View New Arrivals",
+            "button_link": "shopify://collections",
+            "button_style_secondary": "solid",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": "solid",
+            "link_window": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_wbDjXK",
+        "text_KKxKjB",
+        "button_TzkBh8"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "full_width": true,
+        "enable_border": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 72,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_98qQFM": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_RAihmE": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 20,
+            "banner_width": 33,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Effortless  Everyday Wear",
+            "heading_size": "h1",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Explore the Collection",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "link",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_with_text_ba8mk6": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 20,
+            "banner_width": 33,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Quietly Elegant Essentials",
+            "heading_size": "h1",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Shop the Edit",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "link",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_with_text_jmzbY4": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 20,
+            "banner_width": 33,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Made for Modern Living",
+            "heading_size": "h1",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Discover New Styles",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "link",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_RAihmE",
+        "banner_with_text_ba8mk6",
+        "banner_with_text_jmzbY4"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": false,
+        "enable_sidespace": true,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "left",
+        "image_height": "medium",
+        "show_gap": true,
+        "section_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "title": "You may also like",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "products_to_show": 5,
+        "columns_desktop": 4,
+        "show__slider": true,
+        "arrow_position": "top",
+        "arrow_style": "button",
+        "color_scheme": "background-1",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
-  "order": ["modern_product"]
+  "order": [
+    "main",
+    "video_fGYYm4",
+    "rich_text_Hah7b4",
+    "image_banner_98qQFM",
+    "related-products"
+  ]
 }

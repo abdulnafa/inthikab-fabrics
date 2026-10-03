@@ -153,7 +153,7 @@
     {%- else -%}
       <deferred-media class="deferred-media media media--transparent no-js-hidden" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%" data-media-id="{{ media.id }}">
     {%- endif -%}
-    <button id="Deferred-Poster-{{ modal_id }}-{{ media.id }}" class="deferred-media__poster" type="button">
+    <button id="Deferred-Poster-Modal-{{ media.id }}" class="deferred-media__poster" type="button">
       <span class="deferred-media__poster-button motion-reduce">
         {%- if media.media_type == 'model' -%}
           <span class="visually-hidden">{{ 'products.product.media.play_model' | t }}</span>

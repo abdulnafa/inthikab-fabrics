@@ -216,3 +216,17 @@
 - Added schema-driven `modern-*` Liquid sections, modern header/footer section groups, responsive namespaced CSS/JS, native Shopify facets, variant/product-info, cart-items and cart-drawer contracts, hover states, subtle 3% shadows, mobile layouts and reduced-motion/focus treatments.
 - Rewired the requested modern templates locally only. No Shopify upload, publish, browser/live test, or Git operation was performed; the user will review/test and run the supplied Git commands.
 - Static validation passed: all modern section schemas, changed template/group JSON, template-setting cross-checks, CSS/JS brace checks and `git diff --check`. Full Theme Check could not complete because the legacy theme scan exhausted Node heap even with a 4 GB limit; existing legacy warnings were not changed.
+
+### 2026-10-03 — exact live-theme baseline requested
+
+- Client rejected the brand-new storefront direction and requested the exact code from the currently live client theme as the new optimization baseline.
+- Read-only Shopify CLI listing confirmed live theme `176975937559`, `WORKING - Winter CRO - 2026-09-28`, on `kj7u50-ih.myshopify.com`.
+- Pulled the live theme without edits into local `live-theme-baseline-2026-10-03/` (389 files). No remote theme deletion, upload, publish or settings mutation was performed.
+- Current repository root remains on the committed modern build until the client confirms the local replacement scope; the pulled snapshot is preserved for exact comparison.
+
+### 2026-10-03 — live baseline installed locally
+
+- Replaced the local theme directories with the verified live snapshot after preserving the modern build in Git commit `a5b7f42`. The copy was 389 files and was SHA-256 verified before cleanup of the temporary pull folder.
+- The root now matches live theme `176975937559` exactly. No remote theme was deleted or changed, and no upload/publish was performed.
+- Future work should optimize this baseline one scoped change at a time; client review/testing remains the gate before any Shopify upload or publish.
+- Read-only integrity review counted 389 theme files (183 Liquid). Shopify-generated JSON comments were expected; no baseline file was “fixed” or reformatted. No browser/live test was run, per the client's testing workflow.

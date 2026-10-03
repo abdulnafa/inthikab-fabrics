@@ -844,7 +844,7 @@
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <div class="header__heading">
+        <h1 class="header__heading">
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading header__heading-link link link--text focus-inset">
         <span class="h2 logo-desktop-text {% if settings.transparent_logo != blank %}sticky-logo-wrapper{% endif %} {% if settings.logo %}hidden{% endif %} ">{{ shop.name }}</span>
@@ -940,7 +940,7 @@
           {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
-        </div>
+        </h1>
       {%- endif -%}
     {%- endif -%}
 

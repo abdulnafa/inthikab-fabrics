@@ -9,19 +9,362 @@
  */
 {
   "sections": {
-    "intikhab_about_pro": {
-      "type": "intikhab-about-pro",
+    "main": {
+      "type": "main-page",
       "settings": {
-        "eyebrow": "ABOUT INTIKHAB FABRICS",
-        "heading": "Fabric chosen for how men actually dress.",
-        "intro": "<p>Premium unstitched suiting, presented with clarity and selected for comfort, character and a confident drape.</p>",
-        "featured_collection": "winter-collection",
-        "shop_label": "Explore Winter 2026",
-        "shop_link": "shopify://collections/winter-collection"
+        "padding_top": 0,
+        "padding_bottom": 16
+      }
+    },
+    "image_banner_jtyYyM": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_jKk7iY": {
+          "type": "banner_with_text",
+          "disabled": true,
+          "settings": {
+            "image_overlay_opacity": 40,
+            "banner_width": 33,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "<p>Image banner</p>",
+            "mini_heading_style": "link",
+            "heading": "Image banner",
+            "heading_size": "h1",
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "text_style": "body",
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": true,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "middle-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "background-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_with_text_rxCjGB": {
+          "type": "banner_with_text",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_gvoi0qgvoi0qgvoi.png",
+            "image_overlay_opacity": 70,
+            "banner_width": 100,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "OUR STORY",
+            "heading_size": "h0",
+            "text": "<p>Our journey started with a clear purpose — to bring premium unstitched fabrics that combine <strong>style, comfort, and timeless elegance</strong>.</p>",
+            "text_style": "body",
+            "button_label_1": "",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": true,
+            "container_overlay_opacity": 0,
+            "desktop_content_position": "bottom-center",
+            "desktop_content_alignment": "center",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_jKk7iY",
+        "banner_with_text_rxCjGB"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "full_width": true,
+        "enable_sidespace": false,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "left",
+        "image_height": "small",
+        "show_gap": true,
+        "section_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_G3THth": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_cmCqq9": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Who We Are?",
+            "heading_size": "h2"
+          }
+        },
+        "text_K3ktQh": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Who We Are</strong></h2><p>We are a growing name in men’s unstitched fashion, dedicated to offering high-quality cotton and blended fabrics crafted for both everyday wear and special occasions. Our collection ranges from clean, plain textures to subtle, refined designs—delivering the perfect balance of simplicity and sophistication to complement every style.<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "text_g6DMWX": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Our Mission</strong></h2><p>Our mission is to provide premium fabrics that combine comfort with timeless style. We are committed to maintaining exceptional quality, precise finishing, and a design philosophy that blends modern aesthetics with traditional elegance, allowing every customer to dress with confidence.<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "text_UfRQ97": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>What We Offer</strong></h2><p>At Intikhab Fabrics, we present a carefully curated selection of premium Wash & Wear, soft and breathable cotton, and elegant blended fabrics. Each article is designed to ensure comfort, durability, and a refined premium look, making it ideal for both casual and formal wear.<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "button_q6CTbm": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": "solid",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": "solid",
+            "link_window": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_cmCqq9",
+        "text_K3ktQh",
+        "text_g6DMWX",
+        "text_UfRQ97",
+        "button_q6CTbm"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "full_width": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "multicolumn_rFHGh4": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_WNixMt": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "JENNA REILLY",
+            "title": "CEO & Founder",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "body",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        },
+        "column_UXjznA": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "ANNETTE JONES",
+            "title": "Designer & Model",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "body",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        },
+        "column_dGYhq8": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "Chantelle West",
+            "title": "Designer & Model",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "subtitle",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        },
+        "column_q6WMq6": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "JENNA REILLY",
+            "title": "CEO & Founder",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "body",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        },
+        "column_NgkcG3": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "ANNETTE JONES",
+            "title": "Designer & Model",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "body",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        },
+        "column_hgtaEB": {
+          "type": "column",
+          "settings": {
+            "block_clr": "#ffffff",
+            "enable_txt_clr": true,
+            "block_txt_clr": "#000000",
+            "subtitle": "Chantelle West",
+            "title": "Designer & Model",
+            "text": "<p>@chantellewest</p>",
+            "description_style": "subtitle",
+            "link_label": "",
+            "link": "",
+            "button_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "column_WNixMt",
+        "column_UXjznA",
+        "column_dGYhq8",
+        "column_q6WMq6",
+        "column_NgkcG3",
+        "column_hgtaEB"
+      ],
+      "disabled": true,
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Meet out team",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "enable_desktop_slider": false,
+        "image_content_alignment": "center",
+        "column_alignment": "center",
+        "column_position": "bottom",
+        "button_label": "",
+        "button_link": "",
+        "view_all_style": "link",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 60
+      }
+    },
+    "image_banner_7bwcBL": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_dmqiPp": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 10,
+            "banner_width": 50,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Shop Our Latest Collection",
+            "heading_size": "h2",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 70,
+            "desktop_content_position": "bottom-left",
+            "desktop_content_alignment": "left",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_with_text_VrMxX8": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 10,
+            "banner_width": 50,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "Discover Your Signature Look",
+            "heading_size": "h2",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 0,
+            "desktop_content_position": "bottom-left",
+            "desktop_content_alignment": "left",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_dmqiPp",
+        "banner_with_text_VrMxX8"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": false,
+        "enable_sidespace": true,
+        "title": "",
+        "heading_size": "h0",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "left",
+        "image_height": "adapt",
+        "show_gap": true,
+        "section_color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 60
       }
     }
   },
   "order": [
-    "intikhab_about_pro"
+    "main",
+    "image_banner_jtyYyM",
+    "rich_text_G3THth",
+    "multicolumn_rFHGh4",
+    "image_banner_7bwcBL"
   ]
 }

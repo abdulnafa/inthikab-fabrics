@@ -352,3 +352,19 @@
 - [x] Native Shopify contracts are preserved for facets/filter AJAX, variant selection/product-info, media gallery/modal, AJAX cart updates, dynamic checkout and cart drawer behavior. Checkout itself remains Shopify-hosted/theme-editor controlled.
 - [x] Static checks passed for all modern section schemas, changed template/group JSON, template settings, CSS/JS brace balance and whitespace. Full Theme Check was attempted with a 4 GB Node heap but the existing legacy-theme scan still ended in heap exhaustion; no browser or remote Shopify test was run by design.
 - [ ] User review/test and Git push remain pending. Live theme `176975937559`, draft theme `176993173527`, and Shopify publish state were not changed in this implementation turn.
+
+### 2026-10-03 — live-theme baseline pull
+
+- [x] User rejected the brand-new modular storefront direction and requested that optimization start from the exact currently live theme.
+- [x] Read-only Shopify CLI verification confirmed live theme `176975937559` (`WORKING - Winter CRO - 2026-09-28`) on `kj7u50-ih.myshopify.com`.
+- [x] Pulled an untouched local snapshot into `live-theme-baseline-2026-10-03/` (389 files), including the live `layout/theme.liquid`, `config/settings_data.json`, templates, sections and assets.
+- [x] No remote theme was deleted, edited, published or renamed. Existing local modern storefront files remain in the repository commit until the client confirms whether the repository root should be replaced by the pulled baseline.
+- [ ] Pending client decision: replace the current repository theme folders with the pulled live baseline. If approved, preserve the current commit as the recoverable modern-build reference and provide scoped Git handoff commands.
+
+### 2026-10-03 — local root aligned to live baseline
+
+- [x] Replaced only the local Shopify theme directories (`assets`, `blocks`, `config`, `layout`, `locales`, `sections`, `snippets`, `templates`) with the verified live snapshot. The copy contained 389 files and passed a full SHA-256 source/destination comparison before the temporary snapshot folder was removed.
+- [x] The repository root now contains the exact live theme code from `176975937559`; the previous modern build remains recoverable at Git commit `a5b7f42`.
+- [x] Shopify remote state was not deleted, edited, uploaded, published, or renamed. Live theme, draft theme, and rollback themes remain untouched.
+- [x] Read-only integrity checks found 389 theme files (183 Liquid); Shopify-header comments were handled during JSON parsing, with 85/86 files parser-valid. The remaining `locales/en.default.schema.json` retains the live theme's original schema syntax and was not changed. `git diff --check` reported only normal LF/CRLF conversion warnings.
+- [ ] Pending: client review of the unchanged live baseline. Future optimization should be applied incrementally to this root and remain draft/review-first.

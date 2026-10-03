@@ -1,31 +1,962 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-    "modern_home": {
-      "type": "modern-home",
+    "scrolling_bar_baKx4V": {
+      "type": "scrolling-bar",
+      "disabled": true,
+      "name": "t:sections.scrolling-bar.presets.name",
       "settings": {
-        "hero_image": "shopify://shop_images/Collection_Cover.png",
-        "hero_eyebrow": "The considered edit · 2026",
-        "hero_heading": "Fabric with a quieter kind of confidence.",
-        "hero_text": "<p>Thoughtfully sourced fabrics, considered colour and an exceptional hand-feel — made for the way you move.</p>",
-        "hero_primary_label": "Shop the edit",
-        "hero_primary_link": "shopify://collections/premium-cotton-collection",
-        "hero_secondary_label": "Explore collections",
-        "hero_secondary_link": "shopify://collections",
-        "featured_collection": "premium-cotton-collection",
-        "editorial_image": "shopify://shop_images/Boski_Banner.jpg"
-      },
+        "wb_marktext": "COD Available Across Pakistan",
+        "outline_text": false,
+        "mark_space": 10,
+        "mark_speed": 20,
+        "marq_diection": "right_left",
+        "seprater": "none",
+        "font_size": 14,
+        "enable_transp": false,
+        "card_color_scheme": "accent-1",
+        "text_padding_top": 8,
+        "text_padding_bottom": 8,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "3ec26328-39f6-4397-b03f-f6603259aac8": {
+      "type": "slideshow",
       "blocks": {
-        "collection_signature": { "type": "collection", "settings": { "collection": "premium-cotton-collection", "kicker": "Signature weave", "link_label": "View collection" } },
-        "collection_winter": { "type": "collection", "settings": { "collection": "winter-collection", "kicker": "Seasonal edit", "link_label": "View collection" } },
-        "collection_soft": { "type": "collection", "settings": { "collection": "cotton-soft-finish", "kicker": "Everyday luxury", "link_label": "View collection" } },
-        "collection_boski": { "type": "collection", "settings": { "collection": "boski", "kicker": "Made to measure", "link_label": "View collection" } },
-        "trust_quality": { "type": "trust", "settings": { "icon": "leaf", "title": "Thoughtfully sourced", "copy": "Quality you can feel" } },
-        "trust_service": { "type": "trust", "settings": { "icon": "shield", "title": "A considered choice", "copy": "Clear, dependable service" } },
-        "trust_delivery": { "type": "trust", "settings": { "icon": "truck", "title": "Delivered with care", "copy": "Packed and sent securely" } },
-        "trust_return": { "type": "trust", "settings": { "icon": "star", "title": "Made for keeps", "copy": "Fabrics worth returning to" } }
+        "template--16391993720889__3ec26328-39f6-4397-b03f-f6603259aac8-slide-1": {
+          "type": "slide",
+          "settings": {
+            "pagination_text": "",
+            "image": "shopify://shop_images/Premium_Summer_Collection_Hero_Banner_1__jpg.jpg",
+            "mobile_image": "shopify://shop_images/Premium_Summer_Collection_Hero_Banner_Mobile_jpg.png",
+            "image_overlay_opacity": 40,
+            "heading": "Premium Summer Collection",
+            "heading_size": "h2",
+            "offer__text": "",
+            "mini_heading_style": "link",
+            "subheading": "",
+            "description": "<p></p><p>A refined selection for everyday wear, formal dressing and timeless traditional style.<br/></p>",
+            "text_style": "subtitle",
+            "button_label": "Explore Collection",
+            "link": "shopify://collections/premium-summer-collection",
+            "show_icon": true,
+            "link_window": true,
+            "view_all_style": "solid",
+            "button_label2": "",
+            "link2": "shopify://collections/summer",
+            "show_icon2": false,
+            "link_window2": true,
+            "view_all_style2": "solid",
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_zfpaAz": {
+          "type": "slide",
+          "settings": {
+            "pagination_text": "",
+            "image": "shopify://shop_images/Intikhab_Fabric_First_Slider_Image_with_Japan_Toyobo_Boski_Wash_and_Wear.jpg",
+            "mobile_image": "shopify://shop_images/Four_SEason_Wash_and_Wear_Mobile_version.png",
+            "image_overlay_opacity": 20,
+            "heading": "Stay Cool with Summer Cotton",
+            "heading_size": "h1",
+            "offer__text": "",
+            "mini_heading_style": "link",
+            "subheading": "",
+            "description": "<p>Lightweight, breathable cotton fabrics designed to keep you comfortable and stylish all summer.</p><p></p>",
+            "text_style": "subtitle",
+            "button_label": "View More",
+            "link": "shopify://products/barq-radiant-silver-finish-cotton-sky-blue",
+            "show_icon": true,
+            "link_window": true,
+            "view_all_style": "solid",
+            "button_label2": "",
+            "link2": "",
+            "show_icon2": false,
+            "link_window2": true,
+            "view_all_style2": "outline",
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_8L38Bi": {
+          "type": "slide",
+          "settings": {
+            "pagination_text": "",
+            "image": "shopify://shop_images/Intikhab_Fabrics_Cover_Banner_Image_four_season_wash_and_wear_6b3228c4-ea6d-45e0-adf0-9ee91b75fe0b.png",
+            "mobile_image": "shopify://shop_images/Intikhab_Fabrics_Cover_Banner_Image_four_season_wash_and_wear.png",
+            "image_overlay_opacity": 20,
+            "heading": "Effortless Style with Wash & Wear",
+            "heading_size": "h1",
+            "offer__text": "",
+            "mini_heading_style": "link",
+            "subheading": "",
+            "description": "<p>Smooth, wrinkle-resistant fabrics perfect for everyday wear and special occasions.</p>",
+            "text_style": "subtitle",
+            "button_label": "Shop Now",
+            "link": "shopify://collections/wash-wear",
+            "show_icon": true,
+            "link_window": true,
+            "view_all_style": "solid",
+            "button_label2": "",
+            "link2": "",
+            "show_icon2": false,
+            "link_window2": true,
+            "view_all_style2": "outline",
+            "box_align": "bottom-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+            "text_alignment_mobile": "center"
+          }
+        }
       },
-      "block_order": ["collection_signature", "collection_winter", "collection_soft", "collection_boski", "trust_quality", "trust_service", "trust_delivery", "trust_return"]
+      "block_order": [
+        "template--16391993720889__3ec26328-39f6-4397-b03f-f6603259aac8-slide-1",
+        "slide_zfpaAz",
+        "slide_8L38Bi"
+      ],
+      "settings": {
+        "layout": "full_width",
+        "slide_height": "fit_screen",
+        "arrow_position": "bottom",
+        "slider_visual": "dots",
+        "pagination_width": "in_container",
+        "pagenation_foreground": "#eae9e5",
+        "pagenation_background": "rgba(0,0,0,0)",
+        "pagenet_corner_radius": 10,
+        "slider_alignment": "center",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "image_behavior": "ambient",
+        "accessibility_info": "Slideshow about our brand",
+        "color_scheme": "scheme-abe3bc68-5409-41dd-abcf-8f9ac474947a",
+        "show_text_below": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_DYeFPN": {
+      "type": "rich-text",
+      "blocks": {
+        "text_PYCKQ3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to Intikhab Fabrics</p>",
+            "text_style": "body"
+          }
+        },
+        "heading_nbHzBt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fine unstitched fabrics for the modern gentleman.Where quality, comfort, and timeless style come together.",
+            "heading_size": "h2"
+          }
+        },
+        "button_EqVeUC": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore Collection",
+            "button_link": "",
+            "button_style_secondary": "outline",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": "solid",
+            "link_window": true
+          }
+        }
+      },
+      "block_order": [
+        "text_PYCKQ3",
+        "heading_nbHzBt",
+        "button_EqVeUC"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "full_width": true,
+        "enable_border": true,
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_te7iqY": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_mMAQq7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cotton-soft-finish",
+            "collection_list": []
+          }
+        },
+        "featured_collection_6kRJVG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "cotton-silver-finish",
+            "collection_list": []
+          }
+        },
+        "featured_collection_hLjQUN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "latha",
+            "collection_list": []
+          }
+        },
+        "featured_collection_n3KDWe": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "wash-wear",
+            "collection_list": []
+          }
+        },
+        "featured_collection_KyUyBb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "boski",
+            "collection_list": [
+              "boski"
+            ]
+          }
+        },
+        "featured_collection_46yJjk": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "",
+            "collection_list": []
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_mMAQq7",
+        "featured_collection_6kRJVG",
+        "featured_collection_hLjQUN",
+        "featured_collection_n3KDWe",
+        "featured_collection_KyUyBb",
+        "featured_collection_46yJjk"
+      ],
+      "settings": {
+        "section_width": "full",
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "",
+        "heading_position": "coll_left",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "description": "",
+        "description_style": "body",
+        "show_view_all": false,
+        "view_all_style": "outline",
+        "show_icon": true,
+        "icon_style": "solid",
+        "enable_collection_img_full": true,
+        "collection_card_direction": "column",
+        "content_position": "on_image",
+        "image_ratio": "adapt",
+        "image_position": "start",
+        "columns_desktop": 5,
+        "grid_style": "marquee",
+        "rows_desktop": 1,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "spacing_grid_horizontal": 8,
+        "spacing_grid_vertical": 8,
+        "color_scheme": "accent-2",
+        "enable_hover": false,
+        "scoll_bg": "#ffffff",
+        "scoll_txt": "#000000",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection_3qD8y3": {
+      "type": "featured-collection",
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "Everyday Comfort Cotton | Soft Finishing",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "description": "",
+        "show_description": true,
+        "description_style": "subtitle",
+        "collection": "cotton-soft-finish",
+        "product_list": [],
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "arrow_position": "top",
+        "arrow_style": "button",
+        "color_scheme": "background-2",
+        "box_align": "top",
+        "text_alignment": "center",
+        "show_text_box": false,
+        "imgcolor_scheme": "background-1",
+        "heading": "Heading",
+        "sub_heading": "Sub Heading",
+        "button_label": "Button label",
+        "button_link": "",
+        "link_window": true,
+        "button_style_secondary": "link",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 72,
+        "padding_bottom": 20
+      }
+    },
+    "image_banner_84j4RW": {
+      "type": "image-banner",
+      "blocks": {
+        "banner_with_text_apLiWj": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "banner_width": 50,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "button",
+            "heading": "",
+            "heading_size": "h0",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-left",
+            "desktop_content_alignment": "left",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        },
+        "banner_with_text_J4qFi7": {
+          "type": "banner_with_text",
+          "settings": {
+            "image_overlay_opacity": 0,
+            "banner_width": 50,
+            "banner_offer_text": "",
+            "offer_text_position": "middle",
+            "subheading": "",
+            "mini_heading_style": "link",
+            "heading": "<strong>Your Style, Our Spotlight</strong>",
+            "heading_size": "h0",
+            "text": "",
+            "text_style": "body",
+            "button_label_1": "Discover Now",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid",
+            "show_text_box": false,
+            "container_overlay_opacity": 40,
+            "desktop_content_position": "bottom-left",
+            "desktop_content_alignment": "left",
+            "color_scheme": "accent-1",
+            "image_behavior": "none",
+            "mobile_content_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "banner_with_text_apLiWj",
+        "banner_with_text_J4qFi7"
+      ],
+      "disabled": true,
+      "settings": {
+        "full_width": true,
+        "enable_sidespace": true,
+        "title": "",
+        "heading_size": "h2",
+        "description": "",
+        "description_style": "body",
+        "heading_alignment": "right",
+        "image_height": "adapt",
+        "show_gap": false,
+        "section_color_scheme": "background-1",
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "lookbook_acYcXf": {
+      "type": "lookbook",
+      "blocks": {
+        "text_QHEVzr": {
+          "type": "text",
+          "settings": {
+            "image": "shopify://shop_images/Intikhab_Fabric_Model_shoot_for_different_article.png",
+            "active_color": "#f5f5f5",
+            "wblooktop_1": 48,
+            "wblookleft_1": 37,
+            "product_1": "zarik-premium-wash-wear-sun-light",
+            "wblooktop_2": 38,
+            "wblookleft_2": 59,
+            "product_2": "sukhan-pure-luxury-pima-cotton-desert",
+            "wblooktop_3": 33,
+            "wblookleft_3": 17,
+            "product_3": "zouq",
+            "wblooktop_4": 50,
+            "wblookleft_4": 79,
+            "product_4": "mizaaj-everyday-comfort-cotton-white"
+          }
+        },
+        "text_herQQd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "active_color": "#f5f5f5",
+            "wblooktop_1": 95,
+            "wblookleft_1": 19,
+            "product_1": "",
+            "wblooktop_2": 50,
+            "wblookleft_2": 30,
+            "product_2": "",
+            "wblooktop_3": 50,
+            "wblookleft_3": 30,
+            "product_3": "",
+            "wblooktop_4": 50,
+            "wblookleft_4": 30,
+            "product_4": ""
+          }
+        },
+        "text_xebLxt": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "active_color": "#f5f5f5",
+            "wblooktop_1": 79,
+            "wblookleft_1": 64,
+            "product_1": "",
+            "wblooktop_2": 50,
+            "wblookleft_2": 30,
+            "product_2": "",
+            "wblooktop_3": 50,
+            "wblookleft_3": 30,
+            "product_3": "",
+            "wblooktop_4": 50,
+            "wblookleft_4": 30,
+            "product_4": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_QHEVzr",
+        "text_herQQd",
+        "text_xebLxt"
+      ],
+      "name": "t:sections.lookbook.name",
+      "settings": {
+        "full_width": true,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "Fabric That Defines Your Style",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "description": "",
+        "description_style": "body",
+        "image_height": "adapt",
+        "pro_preview_position": "in_side",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "sponsored_product_3EmcWt": {
+      "type": "sponsored-product",
+      "name": "t:sections.sponsored-product.presets.name",
+      "settings": {
+        "section_width": "full_width",
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "Exclusive Offers in Focus",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "show_timer": false,
+        "wb_bannerdate": "2026/12/12",
+        "secondary_background": true,
+        "sec_background_color": "#ffffff",
+        "collection": "exclusive-offer-section-home-page",
+        "products_to_show": 4,
+        "show_column_on_desktop": 2,
+        "show_row_on_desktop": 2,
+        "color_scheme": "inverse",
+        "card_style": "card",
+        "image_ratio": "portrait",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "box_align": "top",
+        "text_alignment": "center",
+        "show_text_box": false,
+        "imgcolor_scheme": "",
+        "sub_heading": "Sub Heading",
+        "heading": "Heading",
+        "button_label": "Button label",
+        "button_link": "",
+        "link_window": true,
+        "button_style_secondary": "link",
+        "columns_mobile": "2",
+        "padding_top": 48,
+        "padding_bottom": 0
+      }
+    },
+    "testimonial_n68k3b": {
+      "type": "testimonial",
+      "blocks": {
+        "quote_3LcNnF": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "heading_size": "small",
+            "display_review": true,
+            "star_rating": 5,
+            "quote": "<h2><br/>“Absolutely love this piece! The fabric feels luxurious, the fit is spot-on, and it’s incredibly comfortable for all-day wear. You can really see the attention to detail in the stitching and finish. Arrived quickly and the packaging was beautiful too.”<br/><br/></h2>",
+            "image": "shopify://shop_images/Four_SEason_Wash_and_Wear_Mobile_version.png",
+            "author": "Najam ul Hassan",
+            "authorlink": "Faisalabad, Punjab"
+          }
+        },
+        "quote_qfnMgE": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "heading_size": "small",
+            "display_review": true,
+            "star_rating": 4.5,
+            "quote": "<h2>“Absolutely delighted with my recent purchase.”<br/>The fabric quality feels premium, and the craftsmanship is evident in every detail. The design balances modern style with everyday comfort, making it a standout piece in my wardrobe.<br/><br/></h2>",
+            "author": "Angelo",
+            "authorlink": "Camden, UK"
+          }
+        },
+        "quote_CWCVN9": {
+          "type": "quote",
+          "settings": {
+            "rev_title": "",
+            "heading_size": "small",
+            "display_review": true,
+            "star_rating": 5,
+            "quote": "<h2>I recently purchased a suit for a formal occasion, and the craftsmanship truly impressed me. The tailoring is precise, the fabric feels luxurious, and the fit elevated my confidence throughout the evening. Compliments followed all night—this brand delivers timeless elegance.</h2>",
+            "author": "Isabella Moor",
+            "authorlink": "Chicago,USA"
+          }
+        }
+      },
+      "block_order": [
+        "quote_3LcNnF",
+        "quote_qfnMgE",
+        "quote_CWCVN9"
+      ],
+      "disabled": true,
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "title": "",
+        "heading_alignment": "center",
+        "heading_size": "h1",
+        "description": "",
+        "description_style": "body",
+        "image_corners": "circle",
+        "columns_desktop": 1,
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "enbale_contant_bg": false,
+        "enable_quote": true,
+        "enbale_bg": false,
+        "star_ratingclr": "#c9a24d",
+        "quote_clr": "#9c8f82",
+        "review_position": "top",
+        "auth_direction": "row",
+        "auth_position": "bottom",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": true,
+        "padding_top": 32,
+        "padding_bottom": 0
+      }
+    },
+    "video_3QTErD": {
+      "type": "video",
+      "blocks": {
+        "heading_3eFMzY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Our Philosophy",
+            "heading_size": "h1"
+          }
+        },
+        "text_QHCiJL": {
+          "type": "text",
+          "settings": {
+            "text": "We believe style should feel natural, confident, and enduring.Our designs are shaped by simplicity, attention to detail, and a commitment to modern elegance.",
+            "text_style": "body"
+          }
+        },
+        "buttons_HLaFii": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "link_window": true,
+            "view_all_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "heading_3eFMzY",
+        "text_QHCiJL",
+        "buttons_HLaFii"
+      ],
+      "disabled": true,
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "full_width": true,
+        "heading": "",
+        "heading_size": "h0",
+        "enable_video_looping": true,
+        "show_play_btn": true,
+        "auto_play_video": true,
+        "enable_controller": false,
+        "video_url": "",
+        "description": "",
+        "show_text_box": false,
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "left",
+        "show_content": false,
+        "color_scheme": "accent-1",
+        "padding_top": 20,
+        "padding_bottom": 60
+      }
+    },
+    "image_with_text_pTmUHG": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bEwRKa": {
+          "type": "heading",
+          "settings": {
+            "subheading": "",
+            "heading": "Sukhan | Pure Luxury Pima Cotton | Beige",
+            "heading_size": "h1"
+          }
+        },
+        "text_HxK3Ab": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Sukhan is a symbol of refined elegance, crafted from the finest Pima cotton for those who appreciate true luxury in everyday wear. Designed for comfort and sophistication, this premium fabric offers a smooth feel and a graceful drape, making it ideal for distinguished summer shalwar kameez<br/></p>",
+            "text_style": "body"
+          }
+        },
+        "author_text_xEJKdD": {
+          "type": "author-text",
+          "disabled": true,
+          "settings": {
+            "authorimage": "shopify://shop_images/Four_SEason_Wash_and_Wear_Mobile_version.png",
+            "image_corners": "circle",
+            "authorname": "Najam ul Hassan",
+            "authorpos": "Style Editor · Modern Womenswear"
+          }
+        },
+        "button_LFxnRi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Explore Layered Looks",
+            "button_link": "shopify://products/sukhan-pure-luxury-pima-cotton-desert",
+            "link_window": true,
+            "view_all_style": "solid"
+          }
+        }
+      },
+      "block_order": [
+        "heading_bEwRKa",
+        "text_HxK3Ab",
+        "author_text_xEJKdD",
+        "button_LFxnRi"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "full_width": false,
+        "enable_full_width_bg": true,
+        "image": "shopify://shop_images/sukhan-pure-luxury-pima-cotton-6251019.jpg",
+        "image_link": "shopify://products/sukhan-pure-luxury-pima-cotton-desert",
+        "full_img_radius": false,
+        "enable_border": true,
+        "enable_large_space": false,
+        "banner_offer_text": "",
+        "banner_offer_text_color": "#ffffff",
+        "height": "large",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "secondary_background": false,
+        "image_behavior": "ambient",
+        "mobile_content_alignment": "center",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "logo_bar_yfgKTi": {
+      "type": "logo-bar",
+      "blocks": {
+        "logo_image_8iDy3Q": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_M9bztL": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_EimeeH": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_8iUJqV": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_WMyr93": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_LKw9ED": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_4c3WeT": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        },
+        "logo_image_Rz3Lka": {
+          "type": "logo_image",
+          "settings": {
+            "description": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_image_8iDy3Q",
+        "logo_image_M9bztL",
+        "logo_image_EimeeH",
+        "logo_image_8iUJqV",
+        "logo_image_WMyr93",
+        "logo_image_LKw9ED",
+        "logo_image_4c3WeT",
+        "logo_image_Rz3Lka"
+      ],
+      "disabled": true,
+      "name": "t:sections.logo_bar.name",
+      "settings": {
+        "full_width": true,
+        "heading": "",
+        "heading_size": "h2",
+        "heading_alignment": "left",
+        "enable_border": false,
+        "enable_separator": false,
+        "content_alignment": "left",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "columns_desktop": 7,
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "button",
+        "secondary_background": false,
+        "sec_background_color": "",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 32
+      }
+    },
+    "8a12a3a7-a50d-4029-898d-88427762a9db": {
+      "type": "featured-blog",
+      "disabled": true,
+      "settings": {
+        "sec_full_width": false,
+        "miniheading": "",
+        "mini_heading_style": "outline",
+        "heading": "Fashion Stories Worth Reading",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "description": "",
+        "description_style": "body",
+        "show_view_all": true,
+        "view_all_style": "link",
+        "blog": "news",
+        "blog_card_style": "standard",
+        "flex_direction": "row",
+        "image_height": "adapt",
+        "post_limit": 4,
+        "columns_desktop": 2,
+        "show_image": true,
+        "show_date": true,
+        "date_position": "top",
+        "show_author": true,
+        "show_description": true,
+        "show_read_more_button": true,
+        "button_style": "link",
+        "show_comment": false,
+        "enable_desktop_slider": true,
+        "arrow_position": "inline",
+        "arrow_style": "icon",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 28
+      }
+    },
+    "17754786620ccaf12a": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e852140_38qahn": {
+          "type": "ai_gen_block_e852140",
+          "settings": {
+            "style": "solid",
+            "separator_color": "#ffffff",
+            "thickness": 10,
+            "desktop_width_percent": 100,
+            "dash_length": 20,
+            "dash_gap": 10,
+            "dot_size": 4,
+            "dot_gap": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e852140_38qahn"
+      ],
+      "settings": {}
+    },
+    "text_with_icons_nqCqPj": {
+      "type": "text-with-icons",
+      "blocks": {
+        "image_WrHNMi": {
+          "type": "image",
+          "settings": {
+            "icon1": "shipping",
+            "title": "<a href=\"/policies/shipping-policy\" title=\"Shipping Policy\">Shipping Policy </a>",
+            "heading_size": "h3",
+            "demotext": "On Order Above 5000 Pkr"
+          }
+        },
+        "image_RTGVUt": {
+          "type": "image",
+          "settings": {
+            "icon1": "service",
+            "title": "<a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Secure Checkout</a>",
+            "heading_size": "h3",
+            "demotext": "100% Secure Shopping"
+          }
+        },
+        "image_Lip66N": {
+          "type": "image",
+          "settings": {
+            "icon1": "bestprice",
+            "title": "<a href=\"/policies/terms-of-service\" title=\"Terms of Service\">Terms of Service</a>",
+            "heading_size": "h3",
+            "demotext": "Terms & Conditions"
+          }
+        },
+        "image_kxCC3C": {
+          "type": "image",
+          "settings": {
+            "icon1": "return",
+            "title": "<a href=\"/policies/refund-policy\" title=\"Refund Policy\">Easy 7-Day Returns</a>",
+            "heading_size": "h3",
+            "demotext": "Returns Within 7 Days."
+          }
+        }
+      },
+      "block_order": [
+        "image_WrHNMi",
+        "image_RTGVUt",
+        "image_Lip66N",
+        "image_kxCC3C"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h0",
+        "iconwidth": 40,
+        "column_alignment": "left",
+        "flex_direction": "row",
+        "auto_rotate": true,
+        "change_slides_speed": 3,
+        "enable_mobile_slider": true,
+        "color_scheme": "accent-1",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
-  "order": ["modern_home"]
+  "order": [
+    "scrolling_bar_baKx4V",
+    "3ec26328-39f6-4397-b03f-f6603259aac8",
+    "rich_text_DYeFPN",
+    "collection_list_te7iqY",
+    "featured_collection_3qD8y3",
+    "image_banner_84j4RW",
+    "lookbook_acYcXf",
+    "sponsored_product_3EmcWt",
+    "testimonial_n68k3b",
+    "video_3QTErD",
+    "image_with_text_pTmUHG",
+    "logo_bar_yfgKTi",
+    "8a12a3a7-a50d-4029-898d-88427762a9db",
+    "17754786620ccaf12a",
+    "text_with_icons_nqCqPj"
+  ]
 }

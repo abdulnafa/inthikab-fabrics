@@ -243,6 +243,17 @@
 
     activeFilter=button.getAttribute('data-cotton-filter');
     applyFilter();
+    const gridTop = document.getElementById('product-grid');
+
+if(gridTop){
+  const headerOffset = 140;
+  const scrollPosition = gridTop.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+  window.scrollTo({
+    top: scrollPosition,
+    behavior: 'smooth'
+  });
+}
   });
 
   const grid=document.getElementById('ProductGridContainer');
@@ -256,7 +267,7 @@
 })();
 </script>
 <style>
-.cotton-category-tabs{display:flex;justify-content:center;align-items:center;width:100%;margin:0 0 28px;border-bottom:1px solid #e5e5e5;}
+.cotton-category-tabs{display:flex;justify-content:center;align-items:center;width:100%;margin:0 0 28px;border-bottom:1px solid #e5e5e5;position:sticky;top:90px;z-index:20;background:#fff;}
 .cotton-tab{position:relative;border:0;background:transparent;color:#555;padding:14px 28px 13px;font:inherit;font-size:13px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;cursor:pointer;white-space:nowrap;}
 .cotton-tab:hover,.cotton-tab.active{color:#0d1428;}
 .cotton-tab.active{font-weight:600;}

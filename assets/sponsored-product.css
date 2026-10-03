@@ -347,6 +347,62 @@
     display: none;
 }
 
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media {
+    position: relative;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media > .product__media-item {
+    display: none !important;
+    animation: exclusive-home-media-fade .55s ease both;
+}
+
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media > .product__media-item:first-child,
+.sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media > .product__media-item.is-carousel-active {
+    display: block !important;
+}
+
+@keyframes exclusive-home-media-fade {
+    from { opacity: .35; }
+    to { opacity: 1; }
+}
+
+.sponsored-section--exclusive-home .homepage-media-carousel__dots {
+    position: absolute;
+    right: 1.2rem;
+    bottom: 1.2rem;
+    left: 1.2rem;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    pointer-events: none;
+}
+
+.sponsored-section--exclusive-home .homepage-media-carousel__dot {
+    width: .62rem;
+    height: .62rem;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, .9);
+    border-radius: 50%;
+    background: rgba(14, 23, 51, .24);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, .18);
+    cursor: pointer;
+    opacity: .85;
+    pointer-events: auto;
+    transition: width .25s ease, border-radius .25s ease, background-color .25s ease, opacity .25s ease;
+}
+
+.sponsored-section--exclusive-home .homepage-media-carousel__dot:hover,
+.sponsored-section--exclusive-home .homepage-media-carousel__dot:focus-visible,
+.sponsored-section--exclusive-home .homepage-media-carousel__dot.is-active {
+    width: 1.7rem;
+    border-radius: 999px;
+    background: rgb(255, 255, 255);
+    opacity: 1;
+    outline: none;
+}
+
 .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media,
 .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .product__media-item,
 .sponsored-section--exclusive-home .product__col_wrapper .wbproduct-container .card__media .media {

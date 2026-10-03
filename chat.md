@@ -275,3 +275,5 @@
 - User will hard-refresh and test the homepage; no browser test was run automatically.
 - Client requested the homepage product font sizes be increased. Updated only the scoped homepage vendor, title and price typography with responsive desktop/mobile values.
 - Uploaded only `assets/sponsored-product.css` to live theme `176975937559`; remote read-back matched local SHA-256 `E6046B527018D142DA0A0A19FFEE23084FCE78CFC834CC0F9FD53C34C0A20232`. No publish was performed.
+- Client requested homepage product image carousels with visible dots and auto-scroll. Added a scoped 4.2-second per-card carousel using existing media, with hover/focus pause and dot controls; archive/product pages remain unchanged.
+- Uploaded only `assets/sponsored-product.css` and `assets/wbcustom.js` to live theme `176975937559`; remote read-back matched local (CSS `BFB43BBFAE56CCA229EE24CD8B3568531D42E51E3332F25B5E035B74D0F227A3`, JS `6317D1292C820CDCA203EFD4EFBA40CA51562CC8DC45B696FB9C460516CA89EE`).

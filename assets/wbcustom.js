@@ -14,14 +14,92 @@ function toggle(event){
   event.currentTarget.classList.add('active');
   if(event.currentTarget.classList.contains('listv')){
     document.getElementById('ProductGridContainer').classList.add('product-list');
+    document.getElementById('ProductGridContainer').classList.add('product-list--premium');
     document.getElementById('ProductGridContainer').classList.remove('product-grid');
   }else if(event.currentTarget.classList.contains('gridv')){
     document.getElementById('ProductGridContainer').classList.add('product-grid');
     document.getElementById('ProductGridContainer').classList.remove('product-list');
+    document.getElementById('ProductGridContainer').classList.remove('product-list--premium');
   }
 }
 document.addEventListener("shopify:section:load", layoutSwitcher);
 layoutSwitcher();
+
+function initExclusiveHomeMediaCarousels() {
+  document.querySelectorAll('.sponsored-section--exclusive-home .wbproduct-container').forEach(card => {
+    if (card.dataset.homeCarouselReady === 'true') return;
+
+    const mediaRoot = card.querySelector('.card__media');
+    if (!mediaRoot) return;
+
+    const mediaItems = Array.from(mediaRoot.querySelectorAll(':scope > .product__media-item'));
+    if (mediaItems.length < 2) return;
+
+    card.dataset.homeCarouselReady = 'true';
+    let activeIndex = 0;
+    let timerId = null;
+
+    const dots = document.createElement('div');
+    dots.className = 'homepage-media-carousel__dots';
+    dots.setAttribute('role', 'tablist');
+    dots.setAttribute('aria-label', 'Product image gallery');
+
+    const activate = index => {
+      activeIndex = (index + mediaItems.length) % mediaItems.length;
+      mediaItems.forEach((item, itemIndex) => {
+        const active = itemIndex === activeIndex;
+        item.classList.toggle('is-carousel-active', active);
+        item.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.querySelectorAll('.homepage-media-carousel__dot').forEach((dot, dotIndex) => {
+        const active = dotIndex === activeIndex;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    };
+
+    mediaItems.forEach((item, itemIndex) => {
+      item.setAttribute('aria-hidden', itemIndex === 0 ? 'false' : 'true');
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'homepage-media-carousel__dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Show product image ${itemIndex + 1}`);
+      dot.addEventListener('click', () => {
+        activate(itemIndex);
+        start();
+      });
+      dots.appendChild(dot);
+    });
+
+    mediaRoot.appendChild(dots);
+
+    const stop = () => {
+      if (timerId) window.clearInterval(timerId);
+      timerId = null;
+    };
+
+    const start = () => {
+      stop();
+      timerId = window.setInterval(() => activate(activeIndex + 1), 4200);
+    };
+
+    card.addEventListener('mouseenter', stop);
+    card.addEventListener('mouseleave', start);
+    card.addEventListener('focusin', stop);
+    card.addEventListener('focusout', event => {
+      if (!card.contains(event.relatedTarget)) start();
+    });
+
+    activate(0);
+    start();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initExclusiveHomeMediaCarousels);
+document.addEventListener('shopify:section:load', initExclusiveHomeMediaCarousels);
+initExclusiveHomeMediaCarousels();
 
 // on scroll play video
 window.addEventListener('load', videoScroll);

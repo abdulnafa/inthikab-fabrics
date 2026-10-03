@@ -258,3 +258,11 @@
 - User supplied the homepage collection strip screenshot and asked for Winter Collection to be added there.
 - Added `winter-collection` as the first native collection-list block in local `templates/index.json`; existing Latha, Wash & Wear, Boski and cotton cards remain in place.
 - Uploaded only `templates/index.json` to live theme `176975937559`. Remote read-back matched local SHA-256 `586169AA9E48C19CA4281DCF77CD7A7E66E1F996C934A9FD386B02A08CC50097`; no other homepage content or theme setting was changed.
+
+### 2026-10-03 - Advanced collection product cards (Completed)
+
+- User shared the collection list-view screenshot and asked to make this section advanced and professional.
+- Shopify's native product-card, filter, sort, pagination, quick-add and variant behavior remain intact while the `product-list` card layout now uses balanced spacing, premium borders/shadows, hover/focus treatment and mobile stacking.
+- Added the `product-list--premium` hook to the dedicated list-view Liquid section and to the grid/list toggle script, so List view receives the same treatment from the standard collection page.
+- Uploaded only `assets/component-product-grid.css`, `assets/wbcustom.js` and `sections/main-collection-list-view.liquid` to live theme `176975937559`; remote read-back matched local (CSS `ABD6F3A0B6752316E47B5346AA7C52EA931FEDDE11D76C31AD187B95FD696DDE`, JS `33CA41C8CA78F59FD2D5AAF07C7A349DD9111573F2F91E774FDF0EFC0AFB5B24`, Liquid `1F9651E6C0EBC2092B7C4D6187EFE382CC41C9F2960B3632DFBF8B288E159F69`).
+- User will test in their browser; no browser test or publish was run automatically.

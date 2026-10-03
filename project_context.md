@@ -397,3 +397,11 @@
 - Client requested that the homepage collection-card strip shown in the supplied screenshot also include the live `Winter Collection`.
 - Added a native `featured_collection` block for `winter-collection` at the start of the homepage `collection-list` block order in `templates/index.json`; existing cards and section settings remain intact.
 - [x] Uploaded only `templates/index.json` to live theme `176975937559`. Remote SHA-256 read-back matched local `586169AA9E48C19CA4281DCF77CD7A7E66E1F996C934A9FD386B02A08CC50097`; the remote block is `featured_collection_winter2026` with collection `winter-collection` at the start of the block order.
+
+### 2026-10-03 - Advanced collection product cards (Completed)
+
+- User supplied a screenshot of the collection product section in list view and asked for an advanced, professional presentation. The current native list-view card uses a wide image/text split with excess empty space and weak card hierarchy.
+- Scope completed: the collection list-view presentation (`product-list`) now has a premium responsive card surface, tighter image/text rhythm, hover/focus treatment and mobile-safe stacking. Shopify filters, sort, pagination, product links, quick add and variant contracts remain intact.
+- Added the `product-list--premium` hook to the list-view section and to the grid/list toggle script so the same treatment works on the standard collection template after clicking List view.
+- [x] Uploaded only `assets/component-product-grid.css`, `assets/wbcustom.js` and `sections/main-collection-list-view.liquid` to live theme `176975937559` with `--nodelete` and no publish/theme deletion. Remote read-back SHA-256 matched local: CSS `ABD6F3A0B6752316E47B5346AA7C52EA931FEDDE11D76C31AD187B95FD696DDE`, JS `33CA41C8CA78F59FD2D5AAF07C7A349DD9111573F2F91E774FDF0EFC0AFB5B24`, Liquid `1F9651E6C0EBC2092B7C4D6187EFE382CC41C9F2960B3632DFBF8B288E159F69`.
+- Static validation passed: CSS braces `110/110`, JavaScript syntax check and `git diff --check` (only normal LF/CRLF warnings). Client will perform the browser visual check; no browser test was run by the assistant.

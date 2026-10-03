@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "intikhab_about_pro": {
+      "type": "intikhab-about-pro",
+      "settings": {
+        "eyebrow": "ABOUT INTIKHAB FABRICS",
+        "heading": "Fabric chosen for how men actually dress.",
+        "intro": "<p>Premium unstitched suiting, presented with clarity and selected for comfort, character and a confident drape.</p>",
+        "featured_collection": "winter-collection",
+        "shop_label": "Explore Winter 2026",
+        "shop_link": "shopify://collections/winter-collection"
+      }
+    }
+  },
+  "order": [
+    "intikhab_about_pro"
+  ]
+}

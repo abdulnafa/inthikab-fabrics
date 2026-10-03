@@ -1,0 +1,59 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "make_full_width": true,
+        "def_image": "shopify://shop_images/Boski_Banner.jpg",
+        "show_collection_image": false,
+        "show_collection_description": true,
+        "hero_layout": "overlay",
+        "coll_bgcolor": "#000000",
+        "coll_color": "#ffffff",
+        "coll_overlay": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 12,
+        "columns_desktop": 3,
+        "enable_filtering": false,
+        "filter_type": "vertical",
+        "enable_filter_bg": false,
+        "vertical_filter_bg_color": "#ffffff",
+        "enable_sticky": false,
+        "enable_sorting": false,
+        "pagination_type": "paged",
+        "enable_listdesc": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 72
+      }
+    },
+    "custom_liquid_dVK3QF": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<div aria-label='Winter collection benefits' style='max-width:1200px;margin:0 auto;border:1px solid rgba(0,0,0,.12);border-radius:12px;padding:18px;background:#faf9f6'><div style='display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;text-align:center'><div><strong style='display:block;font-size:16px'>10 winter shades</strong><span style='font-size:13px'>Across three premium articles</span></div><div><strong style='display:block;font-size:16px'>4 m–6 m cut options</strong><span style='font-size:13px'>Select the length you require</span></div><div><strong style='display:block;font-size:16px'>Cash on Delivery</strong><span style='font-size:13px'>Available at the full order amount</span></div><div><strong style='display:block;font-size:16px'>5% advance-payment saving</strong><span style='font-size:13px'>With EXTRA5 after verification</span></div></div></div>",
+        "color_scheme": "",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "custom_liquid_dVK3QF"
+  ]
+}

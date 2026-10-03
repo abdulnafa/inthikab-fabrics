@@ -1,0 +1,53 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay Group",
+  "sections": {
+    "popup_W3R7LB": {
+      "type": "popup",
+      "disabled": true,
+      "name": "t:sections.popup.presets.name",
+      "settings": {
+        "marquee_text": "Disclaimer",
+        "image_layout": "left",
+        "image_fit": "contain",
+        "limit_display": 0,
+        "limit_days": "30",
+        "position": "center",
+        "content_layout": "start",
+        "trigger_open": "delay",
+        "open_time_delay": 1,
+        "open_scroll_type": "%",
+        "open_scroll_position": "50",
+        "trigger_close": "none",
+        "close_time_delay": 30,
+        "close_scroll_type": "%",
+        "close_scroll_position": "50",
+        "width": 1220,
+        "open_animation": "popupOpenFade",
+        "close_animation": "popupExitFade",
+        "show_overlay": true,
+        "mobile_disable": false,
+        "disable_scrolling": false,
+        "overlay_close": false,
+        "esc_close": false,
+        "f4_close": false,
+        "show_on_homepage": true,
+        "show_on_product_category": false,
+        "show_on_all": false,
+        "color_scheme": ""
+      }
+    }
+  },
+  "order": [
+    "popup_W3R7LB"
+  ]
+}

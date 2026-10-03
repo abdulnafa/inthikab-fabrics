@@ -279,3 +279,5 @@
 - Uploaded only `assets/sponsored-product.css` and `assets/wbcustom.js` to live theme `176975937559`; remote read-back matched local (CSS `BFB43BBFAE56CCA229EE24CD8B3568531D42E51E3332F25B5E035B74D0F227A3`, JS `6317D1292C820CDCA203EFD4EFBA40CA51562CC8DC45B696FB9C460516CA89EE`).
 - Client reported Winter was highlighted on the homepage. Added a homepage-only correction for the stale native active state; Winter Collection linking and hover behavior remain intact.
 - Uploaded only `assets/base.css` to live theme `176975937559`; remote read-back matched local SHA-256 `0FE31862E118FA12D5F99EA38BD36C77E0E859C343F264E52334D5B38B24D252`. No publish was performed.
+- Client confirmed `Wash N Wear` should stay only in `FOUR SEASON`; suppressed the duplicate under `SUMMER` across desktop and mobile menu render paths.
+- Uploaded only `sections/header.liquid` to live theme `176975937559`; remote read-back matched local SHA-256 `B9A5E14407AB0736F00D9FC212FA813EE3C40DCA1F96D31BEC97B7AB350B5D69`. No publish was performed.

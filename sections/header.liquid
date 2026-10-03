@@ -657,6 +657,8 @@
                                   </button>
                                   <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                     {%- for childlink in link.links -%}
+                                      {% assign child_title = childlink.title | strip | downcase %}
+                                      {% unless menu_title == 'summer' and child_title == 'wash n wear' %}
                                       <li>
                                         {%- if childlink.links == blank -%}
                                           <div class="menu-item-with-badge">
@@ -707,6 +709,7 @@
                                           </details>
                                         {%- endif -%}
                                       </li>
+                                      {% endunless %}
                                     {%- endfor -%}
                                   </ul>
                                 </div>
@@ -1611,6 +1614,8 @@
                         </summary>
                         <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="color-{{ section.settings.color__dropmenu }} gradient header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                           {%- for childlink in link.links -%}
+                            {% assign child_title = childlink.title | strip | downcase %}
+                            {% unless menu_title == 'summer' and child_title == 'wash n wear' %}
                             <li>
                               {%- if childlink.links == blank -%}
                                 <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
@@ -1634,6 +1639,7 @@
                                 </details>
                               {%- endif -%}
                             </li>
+                            {% endunless %}
                           {%- endfor -%}
                         </ul>
                       </details>
@@ -2443,6 +2449,8 @@
                         </summary>
                         <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="color-{{ section.settings.color__dropmenu }} gradient header__submenu list-menu list-menu--disclosure gradient caption-large motion-reduce global-settings-popup" role="list" tabindex="-1">
                           {%- for childlink in link.links -%}
+                            {% assign child_title = childlink.title | strip | downcase %}
+                            {% unless menu_title == 'summer' and child_title == 'wash n wear' %}
                             <li>
                               {%- if childlink.links == blank -%}
                                 <a href="{{ childlink.url }}" class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"{% if childlink.current %} aria-current="page"{% endif %}>
@@ -2466,6 +2474,7 @@
                                 </details>
                               {%- endif -%}
                             </li>
+                            {% endunless %}
                           {%- endfor -%}
                         </ul>
                       </details>

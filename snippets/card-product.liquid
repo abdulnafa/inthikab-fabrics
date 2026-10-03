@@ -132,7 +132,8 @@
                 endfor
               -%}
               {%- for media in card_product.media -%}
-                {%- if media_to_render contains media.id and media.id != card_product.selected_or_first_available_variant.featured_media.id -%}
+                {%- if media.id != card_product.selected_or_first_available_variant.featured_media.id -%}
+                {%- if archive_mode or media_to_render contains media.id -%}
                   <div class="product__media-item" data-media-id="{{ section.id }}-{{ card_product.id }}-{{ media.id }}">
                     <a href="{{ card_product.url | append: '?variant=' | append: card_product.selected_or_first_available_variant.id | default: '#' }}"
                       title="{{ card_product.title | escape }}"
@@ -177,6 +178,7 @@
                         {%- endif -%}
                     </a>
                   </div>
+                {%- endif -%}
                 {%- endif -%}
               {%- endfor -%}
             </div>

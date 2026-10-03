@@ -116,7 +116,7 @@
           {%- endif -%}
         </div>
       {%- endif -%}
-      <div class="product-grid-container product-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {% if section.settings.filter_type == 'vertical' and section.settings.collapse_on_larger_devices %} product-grid-container-vertical{% endif %}" id="ProductGridContainer"
+      <div class="product-grid-container archive-products--premium product-grid {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} {% if section.settings.filter_type == 'vertical' and section.settings.collapse_on_larger_devices %} product-grid-container-vertical{% endif %}" id="ProductGridContainer"
        {% if settings.animations_reveal_on_scroll %} data-cascade {% endif %} >
         {%- paginate collection.products by section.settings.products_per_page -%}
           {%- if collection.products.size == 0 -%}
@@ -186,12 +186,13 @@
                       show_quick_add: settings.enable_quick_add,
                       image_shape: settings.image_shape,
                       show_colorvariant: settings.show_colorvariant,
-                      atc_btn_position: settings.atc_btn_position,
-                      atc_btn_style: settings.atc_btn_style,
                       quick_position: settings.quick_position,
                       on_img_on_hover: settings.on_img_on_hover,
                       enable_price_below: settings.enable_price_below,
                       color_variant_position: settings.color_variant_position,
+                      archive_mode: true,
+                      atc_btn_position: 'on_img',
+                      atc_btn_style: 'text_icon',
                       section_id: section.id
                       %}
                   </li>

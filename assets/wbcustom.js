@@ -101,6 +101,88 @@ document.addEventListener('DOMContentLoaded', initExclusiveHomeMediaCarousels);
 document.addEventListener('shopify:section:load', initExclusiveHomeMediaCarousels);
 initExclusiveHomeMediaCarousels();
 
+function initArchiveMediaCarousels() {
+  document.querySelectorAll('.page-collection .archive-products--premium .wbproduct-container').forEach(card => {
+    if (card.dataset.archiveCarouselReady === 'true') return;
+
+    const mediaRoot = card.querySelector('.card__media');
+    if (!mediaRoot) return;
+
+    const mediaItems = Array.from(mediaRoot.querySelectorAll(':scope > .product__media-item'));
+    if (mediaItems.length < 2) return;
+
+    card.dataset.archiveCarouselReady = 'true';
+    let activeIndex = 0;
+    let timerId = null;
+
+    const dots = document.createElement('div');
+    dots.className = 'archive-media-carousel__dots';
+    dots.setAttribute('role', 'tablist');
+    dots.setAttribute('aria-label', 'Product image gallery');
+
+    const activate = index => {
+      activeIndex = (index + mediaItems.length) % mediaItems.length;
+      mediaItems.forEach((item, itemIndex) => {
+        const active = itemIndex === activeIndex;
+        item.classList.toggle('is-carousel-active', active);
+        item.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
+      dots.querySelectorAll('.archive-media-carousel__dot').forEach((dot, dotIndex) => {
+        const active = dotIndex === activeIndex;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+    };
+
+    mediaItems.forEach((item, itemIndex) => {
+      item.setAttribute('aria-hidden', itemIndex === 0 ? 'false' : 'true');
+
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'archive-media-carousel__dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Show product image ${itemIndex + 1}`);
+      dot.addEventListener('click', () => {
+        activate(itemIndex);
+        start();
+      });
+      dots.appendChild(dot);
+    });
+
+    mediaRoot.appendChild(dots);
+
+    const stop = () => {
+      if (timerId) window.clearInterval(timerId);
+      timerId = null;
+    };
+
+    const start = () => {
+      stop();
+      timerId = window.setInterval(() => activate(activeIndex + 1), 4500);
+    };
+
+    card.addEventListener('mouseenter', stop);
+    card.addEventListener('mouseleave', start);
+    card.addEventListener('focusin', stop);
+    card.addEventListener('focusout', event => {
+      if (!card.contains(event.relatedTarget)) start();
+    });
+
+    activate(0);
+    start();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initArchiveMediaCarousels);
+document.addEventListener('shopify:section:load', initArchiveMediaCarousels);
+document.addEventListener('shopify:section:reorder', initArchiveMediaCarousels);
+initArchiveMediaCarousels();
+
+const archiveGrid = document.getElementById('ProductGridContainer');
+if (archiveGrid && window.MutationObserver) {
+  new MutationObserver(() => initArchiveMediaCarousels()).observe(archiveGrid, { childList: true, subtree: true });
+}
+
 // on scroll play video
 window.addEventListener('load', videoScroll);
 window.addEventListener('scroll', videoScroll);

@@ -281,3 +281,9 @@
 - Uploaded only `assets/base.css` to live theme `176975937559`; remote read-back matched local SHA-256 `0FE31862E118FA12D5F99EA38BD36C77E0E859C343F264E52334D5B38B24D252`. No publish was performed.
 - Client confirmed `Wash N Wear` should stay only in `FOUR SEASON`; suppressed the duplicate under `SUMMER` across desktop and mobile menu render paths.
 - Uploaded only `sections/header.liquid` to live theme `176975937559`; remote read-back matched local SHA-256 `B9A5E14407AB0736F00D9FC212FA813EE3C40DCA1F96D31BEC97B7AB350B5D69`. No publish was performed.
+
+### 2026-10-03 - Professional collection archive cards (Completed)
+
+- Client requested a four-card premium archive layout inspired by established fabric retailers, with smaller media, image dots/auto-scroll and a hover cart icon.
+- Keep native collection filters, sort, pagination, product URLs, quick view and variants unchanged; scope the work to the standard collection archive.
+- [x] Uploaded only the archive files to live theme `176975937559` with `--nodelete`; remote read-back matched local SHA-256 for `templates/collection.json`, `sections/main-collection-product-grid.liquid`, `snippets/card-product.liquid`, `assets/template-collection.css` and `assets/wbcustom.js`. Theme Check found no new errors. Client will perform the browser visual check.

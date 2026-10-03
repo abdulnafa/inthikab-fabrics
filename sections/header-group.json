@@ -146,7 +146,7 @@
         "menu_alignment": "center",
         "menu_type_desktop": "dropdown",
         "menuclick": "Hover",
-        "show_menu_link": false,
+        "show_menu_link": true,
         "color_schememenu": "background-1",
         "color__dropmenu": "background-2",
         "sticky_header_type": "always",

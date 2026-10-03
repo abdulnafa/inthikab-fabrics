@@ -5268,3 +5268,171 @@ top: 50vh !important;
         content: unset;
     }
 }
+
+/* Primary navigation refinement: one native Shopify menu, clear state and
+   deliberate spacing on the desktop header. */
+@media (min-width: 992px) {
+    .header__inline-menu .bottom-menu-items {
+        align-items: center;
+        column-gap: clamp(.35rem, 1.25vw, 1.5rem);
+    }
+
+    .header__inline-menu .bottom-menu-items > li {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+        min-height: 4.4rem;
+        padding: 1rem 1.25rem;
+        border-radius: 999px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: .025em;
+        line-height: 1;
+        transition: color .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary > span,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary > span {
+        display: inline-flex;
+        align-items: center;
+        gap: .55rem;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary > span > a,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary > span > a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a::after,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary::after,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary::after {
+        content: '';
+        position: absolute;
+        right: 1.25rem;
+        bottom: .55rem;
+        left: 1.25rem;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        opacity: .9;
+        transform: scaleX(0);
+        transform-origin: center;
+        transition: transform .2s ease;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a:hover,
+    .header__inline-menu .bottom-menu-items > li > a:focus-visible,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:hover,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:focus-visible,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:hover,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:focus-visible {
+        color: #c5b683 !important;
+        background: rgba(197, 182, 131, .14);
+        transform: translateY(-1px);
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a:hover > span,
+    .header__inline-menu .bottom-menu-items > li > a:focus-visible > span,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:hover > span,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:focus-visible > span,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:hover > span,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:focus-visible > span,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:hover > span > a,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:focus-visible > span > a,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:hover > span > a,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:focus-visible > span > a {
+        color: #c5b683 !important;
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a:hover::after,
+    .header__inline-menu .bottom-menu-items > li > a:focus-visible::after,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details[open] > summary::after,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:has(.header__active-menu-item)::after,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details[open] > summary::after,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:has(.header__active-menu-item)::after {
+        transform: scaleX(1);
+    }
+
+    .header__inline-menu .bottom-menu-items > li > header-menu > details[open] > summary,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details[open] > summary,
+    .header__inline-menu .bottom-menu-items > li > a[aria-current='page'],
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:has(.header__active-menu-item),
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:has(.header__active-menu-item) {
+        color: #c5b683 !important;
+        background: rgba(197, 182, 131, .16);
+    }
+
+    .header__inline-menu .bottom-menu-items > li > a[aria-current='page'] > span,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:has(.header__active-menu-item) > span,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:has(.header__active-menu-item) > span,
+    .header__inline-menu .bottom-menu-items > li > header-menu > details > summary:has(.header__active-menu-item) > span > a,
+    .header__inline-menu .bottom-menu-items > li > details-disclosure > details > summary:has(.header__active-menu-item) > span > a {
+        color: #c5b683 !important;
+    }
+
+    .page-index .tranhead.transparent_header .bottom-menu-items > li > a,
+    .page-index .tranhead.transparent_header .bottom-menu-items > li > header-menu > details > summary,
+    .page-index .tranhead.transparent_header .bottom-menu-items > li > details-disclosure > details > summary {
+        color: rgba(var(--color-trans-text), 1);
+    }
+
+    .header__inline-menu .bottom-menu-items .header__submenu {
+        z-index: 30;
+        min-width: 22rem;
+        padding: .65rem;
+        border: 1px solid rgba(var(--color-foreground), .12);
+        border-radius: 1.2rem;
+        box-shadow: 0 1.2rem 3rem rgba(14, 19, 41, .16);
+    }
+
+    .header__inline-menu .bottom-menu-items .header__submenu > li > a,
+    .header__inline-menu .bottom-menu-items .header__submenu > li > header-menu > details > summary,
+    .header__inline-menu .bottom-menu-items .header__submenu > li > details > summary {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 4.2rem;
+        padding: 1rem 1.2rem;
+        border-radius: .8rem;
+        color: rgb(var(--color-foreground)) !important;
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 1.25;
+        transition: color .2s ease, background-color .2s ease, transform .2s ease;
+    }
+
+    .header__inline-menu .bottom-menu-items .header__submenu > li > a:hover,
+    .header__inline-menu .bottom-menu-items .header__submenu > li > a:focus-visible,
+    .header__inline-menu .bottom-menu-items .header__submenu > li > header-menu > details > summary:hover,
+    .header__inline-menu .bottom-menu-items .header__submenu > li > details > summary:hover {
+        color: #0e1329 !important;
+        background: rgba(197, 182, 131, .18);
+        transform: translateX(2px);
+    }
+
+    .header__inline-menu .bottom-menu-items .header__submenu .list-menu__item--active {
+        color: #0e1329 !important;
+        background: rgba(197, 182, 131, .2);
+    }
+}
+
+@media (max-width: 991px) {
+    .menu-drawer__menu-item {
+        min-height: 4.8rem;
+        padding: 1.35rem 1.5rem;
+    }
+
+    .menu-drawer__menu-item--active {
+        color: #c5b683 !important;
+        background: rgba(197, 182, 131, .12);
+    }
+}

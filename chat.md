@@ -237,3 +237,12 @@
 - Root cause was the black wordmark baked into the separate transparent-header PNG. Added a scoped white filter to local `assets/base.css`, preserving the separate sticky logo asset.
 - Uploaded only `assets/base.css` to live theme `176975937559` (no publish or other-file change). Remote read-back matches local SHA-256 `76BC8D1E4CAF0F67A62695B0E6E3666815D78E99966E31410FE4517DE603508E`.
 - Client should hard-refresh and visually confirm; assistant did not run browser testing.
+
+### 2026-10-03 - professional primary menu refinement
+
+- User requested a single professional menu with proper links, active state, hover effect and spacing, and asked that repeated links not be rendered.
+- Kept Shopify's native `main-menu` as the one source of menu data. Enabled parent links through `show_menu_link`, so dropdown parents remain navigable, and did not hard-code or duplicate Cotton/Wash N Wear (those entries come from Admin > Content > Menus).
+- Updated local/live-baseline `sections/header-group.json`, `sections/header.liquid` and `assets/base.css`: parent/child submenu IDs are unique, hover/focus/escape interactions close sibling menus cleanly, and desktop/mobile navigation has consistent padded targets, gold active/hover states, underline cue and a readable rounded dropdown panel. Child text color specificity was also fixed so transparent-header active/hover labels stay gold.
+- Static validation passed (JSON parse, CSS braces `1184/1184`, hover JavaScript syntax and whitespace check; only normal LF/CRLF warnings). No browser test was run because the client tests the storefront.
+- Uploaded only the three scoped files to live theme `176975937559` (`WORKING - Winter CRO - 2026-09-28`), with no publish or other-theme mutation. Final remote read-back SHA-256 matched local: `assets/base.css` `C3635FDF835367A8D396472E7C29188CD9DB9C51E265373DFA3085450256FE65`; `sections/header-group.json` `F461D9ADE9FC661B3C827CA329153B7E2092F06C9B838F1947608C419EC81BC9`; `sections/header.liquid` (including nested submenu handling) `531631D7C6E15B89216683DC0F229B278AB01FB73E54875CCB83939FCBFC5EAE`.
+- Client action: hard-refresh and check desktop/mobile navigation. If labels still repeat, clean the Shopify `main-menu` records in Admin > Content > Menus rather than adding another Liquid menu.

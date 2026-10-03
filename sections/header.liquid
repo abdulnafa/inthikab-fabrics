@@ -1607,7 +1607,7 @@
                                   {{ childlink.title | escape }}
                                 </a>
                               {%- else -%}
-                                <details id="Details-HeaderSubMenu-{{ forloop.index }}">
+                                <details id="Details-HeaderSubMenu-{{ forloop.parentloop.index }}-{{ forloop.index }}">
                                   <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                     <span>{{ childlink.title | escape }}</span>
                                     {% render 'icon-caret' %}
@@ -2434,7 +2434,7 @@
                                   {{ childlink.title | escape }}
                                 </a>
                               {%- else -%}
-                                <details id="Details-HeaderSubMenu-{{ forloop.index }}">
+                                <details id="Details-HeaderSubMenu-{{ forloop.parentloop.index }}-{{ forloop.index }}">
                                   <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                     <span>{{ childlink.title | escape }}</span>
                                     {% render 'icon-caret' %}
@@ -2753,18 +2753,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const s = details.querySelector('summary');
     if (s) s.setAttribute('aria-expanded', open ? 'true' : 'false');
   };
-  document.querySelectorAll('details-disclosure, header-menu').forEach(host => {
-    const d = host.querySelector('details');
-    host.addEventListener('mouseenter', () => toggle(d, true));
-    host.addEventListener('mouseleave', () => toggle(d, false));
-  });
-  const subDetails = [...document.querySelectorAll('.header__submenu details')];
-  subDetails.forEach(d => {
-    d.addEventListener('mouseenter', () => {
-      subDetails.forEach(x => toggle(x, false));
-      toggle(d, true);
+  const hosts = [...document.querySelectorAll('.header__inline-menu header-menu, .header__inline-menu details-disclosure')];
+  const detailsFor = (host) => host?.querySelector(':scope > details');
+  const closeOtherHosts = (currentHost) => {
+    hosts.forEach((host) => {
+      if (host !== currentHost) toggle(detailsFor(host), false);
     });
-    d.addEventListener('mouseleave', () => toggle(d, false));
+  };
+
+  hosts.forEach((host) => {
+    const details = detailsFor(host);
+    if (!details) return;
+
+    const open = () => {
+      closeOtherHosts(host);
+      toggle(details, true);
+    };
+    const close = () => {
+      if (!host.matches(':focus-within')) toggle(details, false);
+    };
+
+    host.addEventListener('mouseenter', open);
+    host.addEventListener('mouseleave', close);
+    host.addEventListener('focusin', open);
+    host.addEventListener('focusout', (event) => {
+      if (!host.contains(event.relatedTarget)) toggle(details, false);
+    });
+    details.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      toggle(details, false);
+      details.querySelector('summary')?.focus();
+    });
+  });
+
+  const subDetails = [...document.querySelectorAll('.header__inline-menu .header__submenu details')];
+  subDetails.forEach((details) => {
+    const closeSiblings = () => {
+      const parent = details.parentElement;
+      if (!parent) return;
+      parent.querySelectorAll(':scope > details').forEach((sibling) => {
+        if (sibling !== details) toggle(sibling, false);
+      });
+    };
+    const open = () => {
+      closeSiblings();
+      toggle(details, true);
+    };
+
+    details.querySelector('summary')?.setAttribute('aria-expanded', details.open ? 'true' : 'false');
+    details.addEventListener('mouseenter', open);
+    details.addEventListener('mouseleave', () => {
+      if (!details.matches(':focus-within')) toggle(details, false);
+    });
+    details.addEventListener('focusin', open);
+    details.addEventListener('focusout', (event) => {
+      if (!details.contains(event.relatedTarget)) toggle(details, false);
+    });
+    details.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      toggle(details, false);
+      details.querySelector('summary')?.focus();
+    });
   });
 });
 

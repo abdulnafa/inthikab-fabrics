@@ -252,3 +252,9 @@
 - User requested that the visible `WINTER` header menu link open the `Winter Collection` page.
 - The active theme receives menu URLs from Shopify's `main-menu`; the verified local collection handle/template is `winter-collection`. The scoped header mapping will point the Winter label to `/collections/winter-collection` in the active desktop and mobile menu paths.
 - Uploaded only `sections/header.liquid` to live theme `176975937559`. Remote read-back matched local SHA-256 `D80FAF2DEA1FB36467778DC6F18E42E5234776F70F85C82EBC60AE4E881C458D`; no navigation records, products, collection content or theme publish state were changed.
+
+### 2026-10-03 - Add Winter Collection to homepage cards (Completed)
+
+- User supplied the homepage collection strip screenshot and asked for Winter Collection to be added there.
+- Added `winter-collection` as the first native collection-list block in local `templates/index.json`; existing Latha, Wash & Wear, Boski and cotton cards remain in place.
+- Uploaded only `templates/index.json` to live theme `176975937559`. Remote read-back matched local SHA-256 `586169AA9E48C19CA4281DCF77CD7A7E66E1F996C934A9FD386B02A08CC50097`; no other homepage content or theme setting was changed.

@@ -391,3 +391,9 @@
 - Client requested that the visible `WINTER` header item open the verified `Winter Collection` archive.
 - The active store theme reads links from Shopify's `main-menu`; the local theme files do not contain navigation records. The verified collection template/handle is `winter-collection`, so the scoped header mapping will use `/collections/winter-collection` for the Winter label in the active desktop and mobile menu paths.
 - [x] Uploaded only `sections/header.liquid` to live theme `176975937559`; remote SHA-256 read-back matched local `D80FAF2DEA1FB36467778DC6F18E42E5234776F70F85C82EBC60AE4E881C458D`, and the remote file contains the `/collections/winter-collection` route mapping. No product, collection, menu record, theme publish or deletion was changed.
+
+### 2026-10-03 - Homepage Winter Collection card (Completed)
+
+- Client requested that the homepage collection-card strip shown in the supplied screenshot also include the live `Winter Collection`.
+- Added a native `featured_collection` block for `winter-collection` at the start of the homepage `collection-list` block order in `templates/index.json`; existing cards and section settings remain intact.
+- [x] Uploaded only `templates/index.json` to live theme `176975937559`. Remote SHA-256 read-back matched local `586169AA9E48C19CA4281DCF77CD7A7E66E1F996C934A9FD386B02A08CC50097`; the remote block is `featured_collection_winter2026` with collection `winter-collection` at the start of the block order.

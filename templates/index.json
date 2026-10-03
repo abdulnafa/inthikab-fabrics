@@ -201,6 +201,13 @@
     "collection_list_te7iqY": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_winter2026": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "winter-collection",
+            "collection_list": []
+          }
+        },
         "featured_collection_mMAQq7": {
           "type": "featured_collection",
           "settings": {
@@ -248,6 +255,7 @@
         }
       },
       "block_order": [
+        "featured_collection_winter2026",
         "featured_collection_mMAQq7",
         "featured_collection_6kRJVG",
         "featured_collection_hLjQUN",

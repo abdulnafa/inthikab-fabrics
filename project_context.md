@@ -385,3 +385,9 @@
 - [x] Static checks passed: header-group JSON parsed after removing Shopify's generated comment, CSS braces balanced `1184/1184`, hover script passed `new Function` syntax validation, and `git diff --check` reported only normal LF/CRLF warnings.
 - [x] Uploaded only those three files to live theme `176975937559` with no publish/theme deletion. Final remote SHA-256 read-back matched local: `assets/base.css` `C3635FDF835367A8D396472E7C29188CD9DB9C51E265373DFA3085450256FE65`; `sections/header-group.json` `F461D9ADE9FC661B3C827CA329153B7E2092F06C9B838F1947608C419EC81BC9`; `sections/header.liquid` (including nested submenu handling) `531631D7C6E15B89216683DC0F229B278AB01FB73E54875CCB83939FCBFC5EAE`.
 - [ ] Client should hard-refresh the live homepage and check HOME/SUMMER/FOUR SEASON/WINTER/CONTACT links, active gold state, hover/focus dropdown, and mobile drawer. If the Shopify Admin `main-menu` itself contains duplicate entries, remove the duplicate navigation records in Admin > Content > Menus; the theme now renders that native menu once.
+
+### 2026-10-03 - Winter navigation route correction (Completed)
+
+- Client requested that the visible `WINTER` header item open the verified `Winter Collection` archive.
+- The active store theme reads links from Shopify's `main-menu`; the local theme files do not contain navigation records. The verified collection template/handle is `winter-collection`, so the scoped header mapping will use `/collections/winter-collection` for the Winter label in the active desktop and mobile menu paths.
+- [x] Uploaded only `sections/header.liquid` to live theme `176975937559`; remote SHA-256 read-back matched local `D80FAF2DEA1FB36467778DC6F18E42E5234776F70F85C82EBC60AE4E881C458D`, and the remote file contains the `/collections/winter-collection` route mapping. No product, collection, menu record, theme publish or deletion was changed.

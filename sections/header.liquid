@@ -590,12 +590,17 @@
                       {%- endfor -%}
                     {% else %}
                       {%- for link in section.settings.menu.links -%}
+                        {% assign menu_title = link.title | strip | downcase %}
+                        {% assign menu_url = link.url %}
+                        {% if menu_title == 'winter' %}
+                          {% assign menu_url = routes.collections_url | append: '/winter-collection' %}
+                        {% endif %}
                         <li>
                           {%- if link.links != blank -%}
                             <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                               <summary class="menu-drawer__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}">
                                 {% if section.settings.show_menu_link == true %}
-                                <a href="{{ link.url }}" class="">
+                                <a href="{{ menu_url }}" class="">
                               {% endif %}
                                   {{ link.title | escape }}
                               {% if section.settings.show_menu_link == true %}
@@ -626,7 +631,7 @@
                                   <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
                                     {% render 'icon-arrow' %}
                                     {% if section.settings.show_menu_link == true %}
-                                <a href="{{ link.url }}" class="">
+                                <a href="{{ menu_url }}" class="">
                               {% endif %}
                                   {{ link.title | escape }}
                               {% if section.settings.show_menu_link == true %}
@@ -708,7 +713,7 @@
                               </div>
                             </details>
                           {%- else -%}
-                            <a href="{{ link.url }}" class="menu-drawer__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+                            <a href="{{ menu_url }}" class="menu-drawer__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset{% if link.current %} menu-drawer__menu-item--active{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
                               {{ link.title | escape }}
                               {% for block in section.blocks %}
                                 {% if block.type == 'menu-badge' %}
@@ -1582,6 +1587,11 @@
           <nav class="wbmenuup header__inline-menu">
             <ul class="list-menu list-menu--inline" role="list">
               {%- for link in section.settings.menu.links -%}
+                {% assign menu_title = link.title | strip | downcase %}
+                {% assign menu_url = link.url %}
+                {% if menu_title == 'winter' %}
+                  {% assign menu_url = routes.collections_url | append: '/winter-collection' %}
+                {% endif %}
                 <li>
                   {%- if link.links != blank -%}
                     <header-menu>
@@ -1590,7 +1600,7 @@
                         <summary class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link focus-inset">
                           <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>
                             {% if section.settings.show_menu_link == true %}
-                                <a href="{{ link.url }}" class="">
+                                <a href="{{ menu_url }}" class="">
                               {% endif %}
                                   {{ link.title | escape }}
                               {% if section.settings.show_menu_link == true %}
@@ -1629,7 +1639,7 @@
                       </details>
                     </header-menu>
                   {%- else -%}
-                    <a href="{{ link.url }}" class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                    <a href="{{ menu_url }}" class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                       <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                     </a>
                   {%- endif -%}
@@ -2410,6 +2420,11 @@
             {%- if section.settings.menu != blank -%}
             <ul class="list-menu list-menu--inline bottom-menu-items{% if section.settings.menu_alignment == 'left' %} main-menu-left{% endif %}{% if section.settings.menu_alignment == 'center' %} main-menu-center{% endif %}" role="list">
               {%- for link in section.settings.menu.links -%}
+                {% assign menu_title = link.title | strip | downcase %}
+                {% assign menu_url = link.url %}
+                {% if menu_title == 'winter' %}
+                  {% assign menu_url = routes.collections_url | append: '/winter-collection' %}
+                {% endif %}
                 <li>
                   {%- if link.links != blank -%}
                     <header-menu>
@@ -2417,7 +2432,7 @@
                         <summary class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link focus-inset">
                           <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>
                             {% if section.settings.show_menu_link == true %}
-                                <a href="{{ link.url }}" class="">
+                                <a href="{{ menu_url }}" class="">
                               {% endif %}
                                   {{ link.title | escape }}
                               {% if section.settings.show_menu_link == true %}
@@ -2456,7 +2471,7 @@
                       </details>
                     </header-menu>
                   {%- else -%}
-                    <a href="{{ link.url }}" class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
+                    <a href="{{ menu_url }}" class="header__menu-item {% if section.settings.menu_uppercase %}menu-uppercase{% endif %} list-menu__item link link--text focus-inset"{% if link.current %} aria-current="page"{% endif %}>
                       <span {%- if link.current %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
                     </a>
                   {%- endif -%}

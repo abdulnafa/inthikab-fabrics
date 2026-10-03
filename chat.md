@@ -246,3 +246,9 @@
 - Static validation passed (JSON parse, CSS braces `1184/1184`, hover JavaScript syntax and whitespace check; only normal LF/CRLF warnings). No browser test was run because the client tests the storefront.
 - Uploaded only the three scoped files to live theme `176975937559` (`WORKING - Winter CRO - 2026-09-28`), with no publish or other-theme mutation. Final remote read-back SHA-256 matched local: `assets/base.css` `C3635FDF835367A8D396472E7C29188CD9DB9C51E265373DFA3085450256FE65`; `sections/header-group.json` `F461D9ADE9FC661B3C827CA329153B7E2092F06C9B838F1947608C419EC81BC9`; `sections/header.liquid` (including nested submenu handling) `531631D7C6E15B89216683DC0F229B278AB01FB73E54875CCB83939FCBFC5EAE`.
 - Client action: hard-refresh and check desktop/mobile navigation. If labels still repeat, clean the Shopify `main-menu` records in Admin > Content > Menus rather than adding another Liquid menu.
+
+### 2026-10-03 - Winter menu connection (Completed)
+
+- User requested that the visible `WINTER` header menu link open the `Winter Collection` page.
+- The active theme receives menu URLs from Shopify's `main-menu`; the verified local collection handle/template is `winter-collection`. The scoped header mapping will point the Winter label to `/collections/winter-collection` in the active desktop and mobile menu paths.
+- Uploaded only `sections/header.liquid` to live theme `176975937559`. Remote read-back matched local SHA-256 `D80FAF2DEA1FB36467778DC6F18E42E5234776F70F85C82EBC60AE4E881C458D`; no navigation records, products, collection content or theme publish state were changed.

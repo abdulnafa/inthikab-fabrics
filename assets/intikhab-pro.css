@@ -4897,3 +4897,34 @@ body .wbverticalcoll .wbglbtn .wblistgridbtn {
   }
 }
 
+/* Archive stability pass (2026-10-03)
+   Restore a true single-row list layout: the archive grid rules below this
+   theme used to leave list cards in four narrow CSS-grid tracks. The existing
+   facet rail spacing is intentionally preserved so its heading/chips remain
+   aligned with the archive controls. */
+@media screen and (min-width: 750px) {
+  body .product-grid-container.product-list #product-grid.grid {
+    display: flex;
+    flex-wrap: wrap;
+    grid-template-columns: none;
+    column-gap: 0;
+    row-gap: clamp(2rem, 2.5vw, 3.2rem);
+    align-items: stretch;
+  }
+
+  body .product-grid-container.product-list #product-grid.grid > .grid__item {
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+  }
+
+  body .product-grid-container.product-list .product-card-wrapper > .card {
+    flex-direction: row;
+    align-items: stretch;
+    height: auto;
+  }
+}
+

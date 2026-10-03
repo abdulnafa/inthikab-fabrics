@@ -319,8 +319,22 @@
     {% endstyle %} 
     <link rel="preload" as="style" href="{{ 'base.css' | asset_url }}">
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    {{ 'intikhab-pro.css' | asset_url | stylesheet_tag }}
-    <script src="{{ 'intikhab-pro.js' | asset_url }}" defer="defer"></script>
+    {%- assign modern_template = false -%}
+    {%- if template.name == 'index' or template.name == 'collection' or template.name == 'product' or template.name == 'cart' or template.name == 'search' or template.name == 'list-collections' -%}
+      {%- assign modern_template = true -%}
+    {%- endif -%}
+    {%- unless modern_template -%}
+      {{ 'intikhab-pro.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'intikhab-pro.js' | asset_url }}" defer="defer"></script>
+    {%- endunless -%}
+    {{ 'modern-storefront.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'modern-storefront.js' | asset_url }}" defer="defer"></script>
+    {%- if settings.cart_type == 'drawer' and template != 'cart' -%}
+      {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+      {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+    {%- elsif settings.cart_type == 'notification' and template != 'cart' -%}
+      {{ 'component-cart-notification.css' | asset_url | stylesheet_tag }}
+    {%- endif -%}
      {%- if settings.enable_compare -%}
       <link rel="preload" as="style" href="{{ 'compare-products.css' | asset_url }}">
       {{ 'compare-products.css' | asset_url | stylesheet_tag }}
@@ -347,6 +361,7 @@
     </a>
     {%- if settings.cart_type == 'drawer' and template != 'cart' -%}
       {%- render 'cart-drawer' -%}
+      <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
     <div class="transparent_header">
       {% sections 'header-group' %}

@@ -344,3 +344,11 @@
 
 - [x] User requires exact PowerShell Git commands after every local code/theme change so they can review, commit and push the update themselves.
 - [x] Git operations remain user-run by default: do not stage, commit or push automatically unless explicitly requested. Commands must be scoped to the files changed in that task.
+
+### 2026-10-03 — modern storefront implementation status
+
+- [x] Local implementation now uses new `modern-header`, `modern-footer`, `modern-home`, `modern-collection`, `modern-list-collections`, `modern-search`, `modern-product` and `modern-cart` sections. Header/footer groups and the requested index/archive/product/cart/search templates are wired to these sections.
+- [x] The presentation layer is namespaced in `assets/modern-storefront.css` and `assets/modern-storefront.js`, with responsive CSS Grid/Flex layouts, premium ink/paper/brass tokens, hover image transitions, quick-view affordance, a fluid overflow-safe filter rail, mobile filter drawer bridge, cart-count updates and the intentionally soft 3% shadow.
+- [x] Native Shopify contracts are preserved for facets/filter AJAX, variant selection/product-info, media gallery/modal, AJAX cart updates, dynamic checkout and cart drawer behavior. Checkout itself remains Shopify-hosted/theme-editor controlled.
+- [x] Static checks passed for all modern section schemas, changed template/group JSON, template settings, CSS/JS brace balance and whitespace. Full Theme Check was attempted with a 4 GB Node heap but the existing legacy-theme scan still ended in heap exhaustion; no browser or remote Shopify test was run by design.
+- [ ] User review/test and Git push remain pending. Live theme `176975937559`, draft theme `176993173527`, and Shopify publish state were not changed in this implementation turn.

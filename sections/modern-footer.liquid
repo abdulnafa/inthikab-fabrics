@@ -1,0 +1,172 @@
+{%- liquid
+  assign footer_menu_links = section.settings.footer_menu.links
+  if footer_menu_links == blank
+    assign footer_menu_links = linklists['main-menu'].links
+  endif
+  assign care_menu_links = section.settings.care_menu.links
+  if care_menu_links == blank
+    assign care_menu_links = linklists['footer'].links
+  endif
+-%}
+
+<footer class="if-modern-footer">
+  <div class="page-width if-modern-footer__main">
+    <div class="if-modern-footer__brand-column">
+      <a class="if-modern-footer__brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+        {%- if settings.logo != blank -%}
+          {{ settings.logo
+            | image_url: width: 360
+            | image_tag:
+              class: 'if-modern-footer__logo',
+              widths: '120,180,240,300,360',
+              sizes: '(min-width: 990px) 180px, 160px',
+              loading: 'lazy',
+              alt: shop.name
+          }}
+        {%- else -%}
+          <span class="if-modern-footer__wordmark">{{ shop.name | escape }}</span>
+        {%- endif -%}
+      </a>
+      {%- if section.settings.description != blank -%}
+        <div class="if-modern-footer__description rte">{{ section.settings.description }}</div>
+      {%- endif -%}
+      <p class="if-modern-footer__contact">
+        {%- if section.settings.phone != blank -%}<a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone | escape }}</a>{%- endif -%}
+        {%- if section.settings.email != blank -%}<a href="mailto:{{ section.settings.email }}">{{ section.settings.email | escape }}</a>{%- endif -%}
+      </p>
+      {%- if section.settings.show_social -%}
+        <div class="if-modern-footer__social" aria-label="Social links">
+          {%- if settings.social_facebook_link != blank -%}<a href="{{ settings.social_facebook_link }}" aria-label="Facebook">f</a>{%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}<a href="{{ settings.social_instagram_link }}" aria-label="Instagram">ig</a>{%- endif -%}
+          {%- if settings.social_tiktok_link != blank -%}<a href="{{ settings.social_tiktok_link }}" aria-label="TikTok">tk</a>{%- endif -%}
+          {%- if settings.social_youtube_link != blank -%}<a href="{{ settings.social_youtube_link }}" aria-label="YouTube">yt</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="if-modern-footer__links">
+      <h2>{{ section.settings.menu_heading | escape }}</h2>
+      <ul role="list">
+        {%- for link in footer_menu_links -%}
+          <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+
+    <div class="if-modern-footer__links">
+      <h2>{{ section.settings.care_heading | escape }}</h2>
+      <ul role="list">
+        {%- for link in care_menu_links -%}
+          <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+        {%- endfor -%}
+        {%- if shop.refund_policy != blank -%}<li><a href="{{ shop.refund_policy.url }}">{{ shop.refund_policy.title | escape }}</a></li>{%- endif -%}
+        {%- if shop.shipping_policy != blank -%}<li><a href="{{ shop.shipping_policy.url }}">{{ shop.shipping_policy.title | escape }}</a></li>{%- endif -%}
+      </ul>
+    </div>
+
+    <div class="if-modern-footer__newsletter">
+      <p class="if-modern-footer__eyebrow">{{ section.settings.newsletter_eyebrow | escape }}</p>
+      <h2>{{ section.settings.newsletter_heading | escape }}</h2>
+      <p>{{ section.settings.newsletter_text | escape }}</p>
+      {%- form 'customer', class: 'if-modern-footer__form' -%}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <label class="visually-hidden" for="ModernFooterEmail-{{ section.id }}">Email address</label>
+        <div class="if-modern-footer__field">
+          <input id="ModernFooterEmail-{{ section.id }}" type="email" name="contact[email]" value="{{ form.email }}" autocomplete="email" placeholder="Email address" required{% if form.errors %} aria-invalid="true"{% endif %}>
+          <button type="submit" aria-label="Subscribe">→</button>
+        </div>
+        {%- if form.posted_successfully? -%}<p class="if-modern-footer__form-message">Thanks for subscribing.</p>{%- endif -%}
+        {%- if form.errors -%}<p class="if-modern-footer__form-message">Please enter a valid email.</p>{%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+
+  <div class="if-modern-footer__bottom">
+    <div class="page-width if-modern-footer__bottom-inner">
+      <span>© {{ 'now' | date: '%Y' }} {{ shop.name | escape }}</span>
+      <span>{{ section.settings.bottom_text | escape }}</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Modern footer",
+  "tag": "section",
+  "class": "section-modern-footer",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Brand description",
+      "default": "<p>Premium unstitched fabrics, presented with clarity and care.</p>"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone",
+      "default": "+92 305 4281115"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "intikhabfabrics@gmail.com"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social links",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "footer_menu",
+      "label": "Main footer menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_heading",
+      "label": "Main menu heading",
+      "default": "Explore"
+    },
+    {
+      "type": "link_list",
+      "id": "care_menu",
+      "label": "Care menu",
+      "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "care_heading",
+      "label": "Care menu heading",
+      "default": "Customer care"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_eyebrow",
+      "label": "Newsletter eyebrow",
+      "default": "The fabric journal"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Newsletter heading",
+      "default": "Keep in touch"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_text",
+      "label": "Newsletter text",
+      "default": "New collections, fabric guidance and considered offers—sent occasionally."
+    },
+    {
+      "type": "text",
+      "id": "bottom_text",
+      "label": "Bottom line text",
+      "default": "Made for the modern wardrobe."
+    }
+  ]
+}
+{% endschema %}

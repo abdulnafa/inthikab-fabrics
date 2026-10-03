@@ -1,0 +1,91 @@
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+<section class="if-modern-search section-{{ section.id }}-padding">
+  <div class="page-width">
+    <nav class="if-modern-collection__breadcrumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span aria-hidden="true">/</span><span>Search</span></nav>
+    <header class="if-modern-search__hero">
+      <p class="if-modern-collection__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      <h1>{{ section.settings.heading | escape }}</h1>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="if-modern-search__form">
+        <label class="visually-hidden" for="ModernSearchInput-{{ section.id }}">Search products</label>
+        <input id="ModernSearchInput-{{ section.id }}" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ section.settings.placeholder | escape }}" autocomplete="off">
+        <input type="hidden" name="options[prefix]" value="last">
+        <button type="submit" aria-label="Submit search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+      </form>
+    </header>
+
+    {%- if search.performed -%}
+      {%- paginate search.results by section.settings.results_per_page -%}
+        <div class="if-modern-search__toolbar">
+          <div class="if-modern-collection__toolbar-left">
+            <button class="if-modern-collection__mobile-filter" type="button" data-modern-filter-open aria-controls="FacetFiltersFormMobile" aria-expanded="false"><span class="if-modern-collection__filter-icon" aria-hidden="true">☰</span><span>Filter &amp; sort</span></button>
+            <p id="ProductCountDesktop" role="status">{{ search.results_count }} results for “{{ search.terms | escape }}”</p>
+          </div>
+          <facet-filters-form class="if-modern-collection__sort-wrap sorting">
+            <form id="FacetSortForm" class="if-modern-collection__sort-form">
+              <label for="SortByCategory">Sort by</label>
+              <div class="if-modern-collection__select">
+                {%- assign search_sort_by = search.sort_by | default: search.default_sort_by -%}
+                <select name="sort_by" id="SortByCategory" aria-label="Sort search results">
+                  {%- for option in search.sort_options -%}
+                    <option value="{{ option.value | escape }}"{% if option.value == search_sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
+                  {%- endfor -%}
+                </select>
+                <span aria-hidden="true">⌄</span>
+              </div>
+            </form>
+          </facet-filters-form>
+        </div>
+        <div class="if-modern-search__layout">
+          <aside class="if-modern-collection__filters" id="main-collection-filters" data-id="{{ section.id }}" aria-label="Filter search results">
+            <div class="if-modern-collection__filters-heading"><span>Refine your selection</span><button type="button" class="if-modern-collection__filter-close" data-modern-filter-close aria-label="Close filters">×</button></div>
+            {% render 'facets', results: search, enable_filtering: section.settings.enable_filtering, enable_sorting: true, filter_type: 'vertical' %}
+          </aside>
+          <div class="if-modern-search__results product-grid-container" id="ProductGridContainer">
+            <div class="collection">
+              {%- if search.results_count == 0 -%}
+                <div class="if-modern-search__empty" id="product-grid" data-id="{{ section.id }}"><h2>{{ section.settings.empty_heading | escape }}</h2><p>{{ section.settings.empty_text | escape }}</p></div>
+              {%- else -%}
+                <ul id="product-grid" class="if-modern-collection__grid" data-id="{{ section.id }}" role="list">
+                  {%- for result in search.results -%}
+                    {%- if result.object_type == 'product' -%}
+                      {%- assign result_image = result.featured_image -%}
+                      <li class="if-modern-card"><article><a class="if-modern-card__media" href="{{ result.url }}" aria-label="{{ result.title | escape }}">{%- if result_image != blank -%}{{ result_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw', alt: result_image.alt | default: result.title | escape }}{%- else -%}{{ 'product-1' | placeholder_svg_tag: 'if-modern-card__placeholder' }}{%- endif -%}<span class="if-modern-card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.7"></circle></svg></span></a><div class="if-modern-card__content"><p class="if-modern-card__vendor">{{ result.object_type | capitalize }}</p><h2 class="if-modern-card__title"><a href="{{ result.url }}">{{ result.title | escape }}</a></h2><span class="if-modern-card__price">{{ result.price | money }}</span></div></article></li>
+                    {%- else -%}
+                      <li class="if-modern-search__text-result"><p class="if-modern-card__vendor">{{ result.object_type | capitalize }}</p><h2><a href="{{ result.url }}">{{ result.title | escape }}</a></h2>{% if result.excerpt != blank %}<p>{{ result.excerpt | strip_html | truncatewords: 24 }}</p>{% endif %}<a class="if-modern-search__read-more" href="{{ result.url }}">Read more →</a></li>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </ul>
+                {%- if paginate.pages > 1 -%}<nav class="if-modern-collection__pagination" aria-label="Pagination">{%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" aria-label="Previous page">←</a>{%- endif -%}<span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>{%- if paginate.next -%}<a href="{{ paginate.next.url }}" aria-label="Next page">→</a>{%- endif -%}</nav>{%- endif -%}
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- endpaginate -%}
+    {%- else -%}
+      <div class="if-modern-search__prompt"><h2>{{ section.settings.prompt_heading | escape }}</h2><p>{{ section.settings.prompt_text | escape }}</p></div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Modern search",
+  "tag": "section",
+  "class": "section-modern-search",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Find your next favourite" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Search the collection" },
+    { "type": "text", "id": "placeholder", "label": "Search placeholder", "default": "Search fabrics, finishes or collections" },
+    { "type": "text", "id": "prompt_heading", "label": "Prompt heading", "default": "What are you looking for?" },
+    { "type": "text", "id": "prompt_text", "label": "Prompt text", "default": "Search by fabric, finish, colour or collection." },
+    { "type": "text", "id": "empty_heading", "label": "Empty heading", "default": "No exact matches" },
+    { "type": "text", "id": "empty_text", "label": "Empty text", "default": "Try a broader search or explore all fabrics." },
+    { "type": "range", "id": "results_per_page", "label": "Results per page", "min": 8, "max": 36, "step": 4, "default": 16 },
+    { "type": "checkbox", "id": "enable_filtering", "label": "Enable filtering", "default": true },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ]
+}
+{% endschema %}

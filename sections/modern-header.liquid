@@ -1,0 +1,145 @@
+{%- liquid
+  assign primary_menu_links = section.settings.menu.links
+  if primary_menu_links == blank
+    assign primary_menu_links = linklists['main-menu'].links
+  endif
+-%}
+
+<header class="if-modern-header" data-modern-header>
+  {%- if section.settings.show_announcement and section.settings.announcement_text != blank -%}
+    <div class="if-modern-header__announcement">
+      <div class="page-width if-modern-header__announcement-inner">
+        <span>{{ section.settings.announcement_text | escape }}</span>
+        {%- if section.settings.announcement_link != blank -%}
+          <a href="{{ section.settings.announcement_link }}">{{ section.settings.announcement_link_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="page-width if-modern-header__main">
+    <button
+      type="button"
+      class="if-modern-header__menu-toggle"
+      aria-expanded="false"
+      aria-controls="ModernHeaderNav-{{ section.id }}"
+      data-modern-menu-toggle
+    >
+      <span class="visually-hidden">{{ 'sections.header.menu' | t }}</span>
+      <span class="if-modern-header__menu-lines" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+
+    <a class="if-modern-header__brand" href="{{ routes.root_url }}" aria-label="{{ shop.name | escape }}">
+      {%- if settings.logo != blank -%}
+        {{ settings.logo
+          | image_url: width: 420
+          | image_tag:
+            class: 'if-modern-header__logo',
+            widths: '140,210,280,350,420',
+            sizes: '(min-width: 990px) 210px, 170px',
+            loading: 'eager',
+            alt: shop.name
+        }}
+      {%- else -%}
+        <span class="if-modern-header__wordmark">{{ shop.name | escape }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav id="ModernHeaderNav-{{ section.id }}" class="if-modern-header__nav" data-modern-nav aria-label="Primary navigation">
+      <ul class="if-modern-header__nav-list" role="list">
+        {%- for link in primary_menu_links -%}
+          <li class="if-modern-header__nav-item{% if link.links != blank %} has-children{% endif %}">
+            <a href="{{ link.url }}" class="if-modern-header__nav-link{% if link.current %} is-current{% endif %}"{% if link.current %} aria-current="page"{% endif %}>
+              {{ link.title | escape }}
+              {%- if link.links != blank -%}<span class="if-modern-header__chevron" aria-hidden="true">⌄</span>{%- endif -%}
+            </a>
+            {%- if link.links != blank -%}
+              <ul class="if-modern-header__submenu" role="list">
+                {%- for child_link in link.links -%}
+                  <li>
+                    <a href="{{ child_link.url }}"{% if child_link.current %} aria-current="page"{% endif %}>{{ child_link.title | escape }}</a>
+                    {%- if child_link.links != blank -%}
+                      <ul role="list">
+                        {%- for grandchild_link in child_link.links -%}
+                          <li><a href="{{ grandchild_link.url }}">{{ grandchild_link.title | escape }}</a></li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="if-modern-header__actions">
+      {%- if section.settings.show_search -%}
+        <a class="if-modern-header__action" href="{{ routes.search_url }}" aria-label="{{ 'general.search.search' | t }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 5 5"></path></svg>
+        </a>
+      {%- endif -%}
+      {%- if section.settings.show_account and shop.customer_accounts_enabled -%}
+        <a class="if-modern-header__action if-modern-header__account" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" aria-label="{{ 'customer.account.title' | t }}">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.4"></circle><path d="M5 20c.8-3.2 3.1-5 7-5s6.2 1.8 7 5"></path></svg>
+        </a>
+      {%- endif -%}
+      <a id="cart-icon-bubble" class="if-modern-header__action if-modern-header__cart" href="{{ routes.cart_url }}" aria-label="{{ 'templates.cart.cart' | t }}">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.5h2l1.8 10.2h10.9l2.3-7.1H6.2"></path><circle cx="9.2" cy="19.2" r="1.2"></circle><circle cx="17.2" cy="19.2" r="1.2"></circle></svg>
+        <span class="if-modern-header__cart-count" data-modern-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Modern header",
+  "tag": "section",
+  "class": "section-modern-header",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_announcement",
+      "label": "Show announcement bar",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "Premium fabrics · Nationwide delivery · Cash on delivery"
+    },
+    {
+      "type": "url",
+      "id": "announcement_link",
+      "label": "Announcement link"
+    },
+    {
+      "type": "text",
+      "id": "announcement_link_label",
+      "label": "Announcement link label",
+      "default": "Explore"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_account",
+      "label": "Show account",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

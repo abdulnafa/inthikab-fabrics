@@ -1,0 +1,36 @@
+<section class="if-modern-collections section-{{ section.id }}-padding">
+  <div class="page-width">
+    <nav class="if-modern-collection__breadcrumbs" aria-label="Breadcrumb"><a href="{{ routes.root_url }}">Home</a><span aria-hidden="true">/</span><span>Collections</span></nav>
+    <header class="if-modern-collections__hero"><p class="if-modern-collection__eyebrow">{{ section.settings.eyebrow | escape }}</p><h1>{{ section.settings.heading | escape }}</h1><p>{{ section.settings.description | escape }}</p></header>
+    {%- paginate collections by section.settings.collections_per_page -%}
+      <div class="if-modern-collections__grid">
+        {%- for collection in collections -%}
+          {%- assign collection_image = collection.featured_image -%}
+          <article class="if-modern-collections__card">
+            <a href="{{ collection.url }}">
+              <div class="if-modern-collections__media">{%- if collection_image != blank -%}{{ collection_image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '480, 720, 960, 1200', sizes: '(min-width: 990px) 33vw, 100vw', alt: collection_image.alt | default: collection.title | escape }}{%- else -%}<div class="if-modern-collections__placeholder"></div>{%- endif -%}<span class="if-modern-collections__arrow" aria-hidden="true">↗</span></div>
+              <div class="if-modern-collections__card-copy"><h2>{{ collection.title | escape }}</h2><p>{{ collection.products_count }} pieces</p></div>
+            </a>
+          </article>
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}<nav class="if-modern-collection__pagination" aria-label="Pagination">{%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" aria-label="Previous page">←</a>{%- endif -%}<span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>{%- if paginate.next -%}<a href="{{ paginate.next.url }}" aria-label="Next page">→</a>{%- endif -%}</nav>{%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Modern collection list",
+  "tag": "section",
+  "class": "section-modern-collections",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Find your finish" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Collections with character" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Explore our considered edit of premium fabrics, from everyday soft finishes to statement weaves." },
+    { "type": "range", "id": "collections_per_page", "label": "Collections per page", "min": 6, "max": 24, "step": 3, "default": 12 },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ]
+}
+{% endschema %}

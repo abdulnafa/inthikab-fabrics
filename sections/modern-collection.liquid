@@ -1,0 +1,174 @@
+{%- comment -%}
+  Modern collection archive.
+
+  The presentation is new and namespaced, while the native Shopify facet
+  contract is intentionally retained. `facets.js` can therefore replace the
+  filter controls and product grid without a full page reload.
+{%- endcomment -%}
+
+{{ 'component-facets.css' | asset_url | stylesheet_tag }}
+{{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+<section class="if-modern-collection section-{{ section.id }}-padding" data-modern-collection>
+  <div class="page-width">
+    <nav class="if-modern-collection__breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ collection.title | escape }}</span>
+    </nav>
+
+    <header class="if-modern-collection__hero">
+      <div class="if-modern-collection__hero-copy">
+        <p class="if-modern-collection__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h1>{{ collection.title | escape }}</h1>
+        {%- if collection.description != blank -%}
+          <div class="if-modern-collection__description rte">{{ collection.description }}</div>
+        {%- elsif section.settings.fallback_description != blank -%}
+          <div class="if-modern-collection__description rte">{{ section.settings.fallback_description }}</div>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.show_collection_image and collection.image != blank -%}
+        <div class="if-modern-collection__hero-image">
+          {{ collection.image | image_url: width: 1200 | image_tag: loading: 'eager', widths: '480, 720, 960, 1200', sizes: '(min-width: 990px) 36vw, 100vw', alt: collection.image.alt | default: collection.title | escape }}
+        </div>
+      {%- endif -%}
+    </header>
+
+    {%- if section.blocks.size > 0 -%}
+      <nav class="if-modern-collection__categories" aria-label="Shop categories">
+        <span class="if-modern-collection__categories-label">Shop by</span>
+        <div class="if-modern-collection__category-list">
+          {%- for block in section.blocks -%}
+            {%- assign category = block.settings.collection -%}
+            {%- if category != blank -%}
+              <a class="if-modern-collection__category{% if category.handle == collection.handle %} is-active{% endif %}" href="{{ category.url }}" {{ block.shopify_attributes }}>
+                {{ block.settings.label | default: category.title | escape }}
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </nav>
+    {%- endif -%}
+
+    {%- paginate collection.products by section.settings.products_per_page -%}
+      <div class="if-modern-collection__toolbar">
+        <div class="if-modern-collection__toolbar-left">
+          <button class="if-modern-collection__mobile-filter" type="button" data-modern-filter-open aria-controls="FacetFiltersFormMobile" aria-expanded="false">
+            <span class="if-modern-collection__filter-icon" aria-hidden="true">☰</span>
+            <span>Filter &amp; sort</span>
+          </button>
+          <p class="if-modern-collection__count" id="ProductCountDesktop" role="status">
+            {{ collection.products_count }} {% if collection.products_count == 1 %}piece{% else %}pieces{% endif %}
+          </p>
+        </div>
+
+        <facet-filters-form class="if-modern-collection__sort-wrap sorting">
+          <form id="FacetSortForm" class="if-modern-collection__sort-form">
+            <label for="SortByCategory">Sort by</label>
+            <div class="if-modern-collection__select">
+              {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+              <select name="sort_by" id="SortByCategory" aria-label="Sort products">
+                {%- for option in collection.sort_options -%}
+                  <option value="{{ option.value | escape }}"{% if option.value == sort_by %} selected{% endif %}>{{ option.name | escape }}</option>
+                {%- endfor -%}
+              </select>
+              <span aria-hidden="true">⌄</span>
+            </div>
+          </form>
+        </facet-filters-form>
+      </div>
+
+      <div class="if-modern-collection__layout">
+        <aside class="if-modern-collection__filters" id="main-collection-filters" data-id="{{ section.id }}" aria-label="Filter products">
+          <div class="if-modern-collection__filters-heading">
+            <span>Refine your selection</span>
+            <button type="button" class="if-modern-collection__filter-close" data-modern-filter-close aria-label="Close filters">×</button>
+          </div>
+          {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, filter_type: 'vertical' %}
+        </aside>
+
+        <div class="if-modern-collection__results product-grid-container" id="ProductGridContainer">
+          {%- if collection.products_count == 0 -%}
+            <div class="if-modern-collection__empty collection" id="product-grid" data-id="{{ section.id }}">
+              <h2>{{ 'sections.collection_template.empty' | t }}</h2>
+              <a class="if-modern-collection__button" href="{{ routes.all_products_collection_url }}">Continue shopping</a>
+            </div>
+          {%- else -%}
+            <div class="collection">
+              <div class="loading-overlay gradient"></div>
+              <ul id="product-grid" class="if-modern-collection__grid" data-id="{{ section.id }}" data-next-url="{{ paginate.next.url }}" role="list">
+                {%- for product in collection.products -%}
+                  {%- assign product_image = product.featured_image -%}
+                  {%- assign product_alt = product_image.alt | default: product.title | escape -%}
+                  <li class="if-modern-card">
+                    <article>
+                      <a class="if-modern-card__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+                        {%- if product_image != blank -%}
+                          {{ product_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw', alt: product_alt }}
+                          {%- if settings.show_secondary_image and product.images.size > 1 -%}
+                            {{ product.images[1] | image_url: width: 900 | image_tag: class: 'if-modern-card__secondary-image', loading: 'lazy', widths: '360, 540, 720, 900', sizes: '(min-width: 1200px) 25vw, (min-width: 750px) 33vw, 50vw', alt: product_alt }}
+                          {%- endif -%}
+                        {%- else -%}
+                          {{ 'product-1' | placeholder_svg_tag: 'if-modern-card__placeholder' }}
+                        {%- endif -%}
+                        {%- if product.compare_at_price > product.price -%}<span class="if-modern-card__badge">Special</span>{%- endif -%}
+                        <span class="if-modern-card__view" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"></path><circle cx="12" cy="12" r="2.7"></circle></svg></span>
+                      </a>
+                      <div class="if-modern-card__content">
+                        {%- if product.vendor != blank and settings.show_vendor -%}<p class="if-modern-card__vendor">{{ product.vendor | escape }}</p>{%- endif -%}
+                        <h2 class="if-modern-card__title"><a href="{{ product.url }}">{{ product.title | escape }}</a></h2>
+                        <div class="if-modern-card__meta">
+                          <span class="if-modern-card__price">{{ product.price | money }}</span>
+                          {%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
+                        </div>
+                      </div>
+                    </article>
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {%- if paginate.pages > 1 -%}
+                <nav class="if-modern-collection__pagination" aria-label="Pagination">
+                  {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" aria-label="Previous page">←</a>{%- endif -%}
+                  <span>Page {{ paginate.current_page }} of {{ paginate.pages }}</span>
+                  {%- if paginate.next -%}<a href="{{ paginate.next.url }}" aria-label="Next page">→</a>{%- endif -%}
+                </nav>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Modern collection",
+  "tag": "section",
+  "class": "section-modern-collection",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The fabric edit" },
+    { "type": "richtext", "id": "fallback_description", "label": "Fallback description", "default": "<p>Explore considered fabrics selected for texture, comfort and lasting character.</p>" },
+    { "type": "checkbox", "id": "show_collection_image", "label": "Show collection image", "default": true },
+    { "type": "range", "id": "products_per_page", "label": "Products per page", "min": 8, "max": 36, "step": 4, "default": 16 },
+    { "type": "checkbox", "id": "enable_filtering", "label": "Enable filtering", "default": true },
+    { "type": "checkbox", "id": "enable_sorting", "label": "Enable sorting", "default": true },
+    { "type": "checkbox", "id": "enable_filter_bg", "label": "Use filter panel background", "default": false },
+    { "type": "color", "id": "vertical_filter_bg_color", "label": "Filter panel background", "default": "#ffffff" },
+    { "type": "range", "id": "padding_top", "label": "Top spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 48 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom spacing", "min": 24, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category link",
+      "limit": 8,
+      "settings": [
+        { "type": "collection", "id": "collection", "label": "Collection" },
+        { "type": "text", "id": "label", "label": "Label" }
+      ]
+    }
+  ]
+}
+{% endschema %}

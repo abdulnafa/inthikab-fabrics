@@ -1,33 +1,31 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "intikhab_home_pro": {
-      "type": "intikhab-home-pro",
+    "modern_home": {
+      "type": "modern-home",
       "settings": {
-        "eyebrow": "WINTER 2026 · AVT & PVT",
-        "heading": "Warmth, character and a better drape.",
-        "text": "<p>Explore ten considered winter shades across three unstitched articles, with clear cut-length options and pricing.</p>",
-        "winter_collection": "winter-collection",
-        "primary_label": "Shop Winter Collection",
-        "primary_link": "shopify://collections/winter-collection",
-        "secondary_label": "Explore All Fabrics",
-        "secondary_link": "shopify://collections/all",
-        "promise_heading": "Premium fabric, presented with clarity.",
-        "promise_text": "<p>Intikhab Fabrics brings together comfort, dependable quality and timeless colour for the modern gentleman.</p>",
-        "promise_label": "Explore all collections",
-        "promise_link": "shopify://collections"
-      }
+        "hero_image": "shopify://shop_images/Collection_Cover.png",
+        "hero_eyebrow": "The considered edit · 2026",
+        "hero_heading": "Fabric with a quieter kind of confidence.",
+        "hero_text": "<p>Thoughtfully sourced fabrics, considered colour and an exceptional hand-feel — made for the way you move.</p>",
+        "hero_primary_label": "Shop the edit",
+        "hero_primary_link": "shopify://collections/premium-cotton-collection",
+        "hero_secondary_label": "Explore collections",
+        "hero_secondary_link": "shopify://collections",
+        "featured_collection": "premium-cotton-collection",
+        "editorial_image": "shopify://shop_images/Boski_Banner.jpg"
+      },
+      "blocks": {
+        "collection_signature": { "type": "collection", "settings": { "collection": "premium-cotton-collection", "kicker": "Signature weave", "link_label": "View collection" } },
+        "collection_winter": { "type": "collection", "settings": { "collection": "winter-collection", "kicker": "Seasonal edit", "link_label": "View collection" } },
+        "collection_soft": { "type": "collection", "settings": { "collection": "cotton-soft-finish", "kicker": "Everyday luxury", "link_label": "View collection" } },
+        "collection_boski": { "type": "collection", "settings": { "collection": "boski", "kicker": "Made to measure", "link_label": "View collection" } },
+        "trust_quality": { "type": "trust", "settings": { "icon": "leaf", "title": "Thoughtfully sourced", "copy": "Quality you can feel" } },
+        "trust_service": { "type": "trust", "settings": { "icon": "shield", "title": "A considered choice", "copy": "Clear, dependable service" } },
+        "trust_delivery": { "type": "trust", "settings": { "icon": "truck", "title": "Delivered with care", "copy": "Packed and sent securely" } },
+        "trust_return": { "type": "trust", "settings": { "icon": "star", "title": "Made for keeps", "copy": "Fabrics worth returning to" } }
+      },
+      "block_order": ["collection_signature", "collection_winter", "collection_soft", "collection_boski", "trust_quality", "trust_service", "trust_delivery", "trust_return"]
     }
   },
-  "order": [
-    "intikhab_home_pro"
-  ]
+  "order": ["modern_home"]
 }

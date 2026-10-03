@@ -209,3 +209,10 @@
 ### 2026-10-03 — Git command handoff preference
 
 - User asked that after every local change we provide the exact Git commands needed to review, stage, commit and push the changed files. User will run the commands; do not push automatically unless explicitly requested.
+
+### 2026-10-03 — brand-new modular storefront build
+
+- User approved a brand-new, original Shopify OS 2.0 storefront experience for the homepage, collection/product archives, collection index, search, product detail and cart. Checkout remains Shopify-managed and can only receive full visual branding through the store's Checkout Editor/plan permissions.
+- Added schema-driven `modern-*` Liquid sections, modern header/footer section groups, responsive namespaced CSS/JS, native Shopify facets, variant/product-info, cart-items and cart-drawer contracts, hover states, subtle 3% shadows, mobile layouts and reduced-motion/focus treatments.
+- Rewired the requested modern templates locally only. No Shopify upload, publish, browser/live test, or Git operation was performed; the user will review/test and run the supplied Git commands.
+- Static validation passed: all modern section schemas, changed template/group JSON, template-setting cross-checks, CSS/JS brace checks and `git diff --check`. Full Theme Check could not complete because the legacy theme scan exhausted Node heap even with a 4 GB limit; existing legacy warnings were not changed.

@@ -1,77 +1,22 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
-  "name": "t:sections.footer.name",
+  "name": "Modern footer",
   "type": "footer",
   "sections": {
     "footer": {
-      "type": "footer",
-      "blocks": {
-        "8119be62-666b-44c2-8a3a-1289e36c0875": {
-          "type": "brand_information",
-          "settings": {
-            "footer_logo": "shopify://shop_images/intikhab_fab_skin_and_white.png",
-            "footer-logo_width": 140,
-            "heading": "",
-            "contsubtext": "<p>Premium unstitched suiting for the modern gentleman. Timeless elegance in every thread.</p>",
-            "description_style": "body",
-            "footer_address": "",
-            "footer_contact_no": "+92-305-4281115",
-            "footer_contact_id": "intikhabfabrics@gmail.com"
-          }
-        },
-        "a45c2795-2053-4aa9-833e-08119b55571b": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Menu",
-            "menu": "main-menu"
-          }
-        },
-        "5ce2aba2-eaf4-4380-aec0-886efc867d97": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Customer Care",
-            "menu": "footer"
-          }
-        },
-        "03762e02-4a28-4d49-8f32-3d9128b1dc11": {
-          "type": "newsletter",
-          "settings": {
-            "heading": "Stay in the know",
-            "news_subtext": "<p>New collections, fabric guidance and selected offers - sent occasionally.</p>",
-            "description_style": "subtitle"
-          }
-        }
-      },
-      "block_order": [
-        "8119be62-666b-44c2-8a3a-1289e36c0875",
-        "a45c2795-2053-4aa9-833e-08119b55571b",
-        "5ce2aba2-eaf4-4380-aec0-886efc867d97",
-        "03762e02-4a28-4d49-8f32-3d9128b1dc11"
-      ],
+      "type": "modern-footer",
       "settings": {
-        "enable_follow_on_shop": false,
-        "social_heading": "",
+        "description": "<p>Premium unstitched fabrics, presented with clarity and care.</p>",
+        "phone": "+92 305 4281115",
+        "email": "intikhabfabrics@gmail.com",
         "show_social": true,
-        "lang_heading": "",
-        "enable_country_selector": false,
-        "enable_language_selector": false,
-        "pay_heading": "Payment Methods",
-        "payment_enable": false,
-        "show_policy": true,
-        "show_copyright": true,
-        "scroll-to-top": true,
-        "color_scheme": "accent-1",
-        "margin_top": 0,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "footer_menu": "main-menu",
+        "menu_heading": "Explore",
+        "care_menu": "footer",
+        "care_heading": "Customer care",
+        "newsletter_eyebrow": "The fabric journal",
+        "newsletter_heading": "Keep in touch",
+        "newsletter_text": "New collections, fabric guidance and considered offers — sent occasionally.",
+        "bottom_text": "Made for the modern wardrobe."
       }
     }
   },

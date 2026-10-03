@@ -1,48 +1,24 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "modern_collection": {
+      "type": "modern-collection",
       "settings": {
-        "make_full_width": true,
-        "def_image": "shopify://shop_images/Boski_Banner.jpg",
-        "show_collection_image": false,
-        "show_collection_description": true,
-        "hero_layout": "overlay",
-        "coll_bgcolor": "#000000",
-        "coll_color": "#ffffff",
-        "coll_overlay": 30
-      }
-    },
-    "product-grid": {
-      "type": "main-collection-product-grid",
-      "settings": {
-        "products_per_page": 12,
-        "columns_desktop": 4,
+        "eyebrow": "The fabric edit",
+        "show_collection_image": true,
+        "products_per_page": 16,
         "enable_filtering": true,
-        "filter_type": "vertical",
-        "enable_filter_bg": false,
-        "vertical_filter_bg_color": "#ffffff",
-        "enable_sticky": false,
-        "enable_sorting": true,
-        "pagination_type": "paged",
-        "enable_listdesc": true,
-        "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 72
-      }
+        "enable_sorting": true
+      },
+      "blocks": {
+        "all": { "type": "category", "settings": { "collection": "all", "label": "All fabrics" } },
+        "winter": { "type": "category", "settings": { "collection": "winter-collection", "label": "Winter collection" } },
+        "premium": { "type": "category", "settings": { "collection": "premium-cotton-collection", "label": "Premium cotton" } },
+        "soft": { "type": "category", "settings": { "collection": "cotton-soft-finish", "label": "Soft finish" } },
+        "wash": { "type": "category", "settings": { "collection": "wash-wear", "label": "Wash & wear" } },
+        "boski": { "type": "category", "settings": { "collection": "boski", "label": "Boski" } }
+      },
+      "block_order": ["all", "winter", "premium", "soft", "wash", "boski"]
     }
   },
-  "order": [
-    "banner",
-    "product-grid"
-  ]
+  "order": ["modern_collection"]
 }

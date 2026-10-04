@@ -291,3 +291,8 @@
 ### 2026-10-03 - Git push branch correction (Completed)
 
 - The archive commit is on local branch `staging`, which tracks `origin/staging`; `git push origin main` failed because no local `main` ref exists. The correct push target is `git push origin staging`.
+
+### 2026-10-04 - Collection archive media proportions (Completed)
+
+- Client requested three cards per desktop row, shorter width-based product media, and a smooth hover zoom without the current white hover state.
+- Updated and uploaded only the archive collection template and scoped collection CSS. Remote read-back matched local files; Theme Check returned no new errors. Client will perform the browser visual check.

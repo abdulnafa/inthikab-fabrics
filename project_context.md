@@ -431,3 +431,9 @@
 ### 2026-10-03 - Git push branch correction (Completed)
 
 - Client ran `git push origin main`, but the repository's current local branch is `staging` and it tracks `origin/staging`; the archive commit `2337f1b` is one commit ahead and ready to push with `git push origin staging`.
+
+### 2026-10-04 - Collection archive media proportions (Completed)
+
+- Client reports the archive media is still too tall, wants three cards per desktop row with width-based responsive sizing, and sees a white flash/blank state on image hover.
+- Adjust the standard collection archive only: use three desktop columns, a shorter responsive media ratio, and preserve the active carousel image at full opacity while applying a smooth zoom.
+- [x] Updated `templates/collection.json` to three desktop columns and changed scoped archive media to a responsive 4:3 ratio. Forced the active first image to remain visible during hover and hid the nested secondary image to remove the white flash. Uploaded only `templates/collection.json` and `assets/template-collection.css` to live theme `176975937559`; remote read-back matched local SHA-256: `3236844EAE905B2FCD33A5F198626D8C2C1C4AC8056699B6A447775A3F01E750` and `3F1BF84BFF52D44EC3E0917DB82284BA952EBE171915D57CB2FF9AC9A5A5EEA6`. Theme Check returned no new errors; existing warnings remain. Client will perform the browser visual check.

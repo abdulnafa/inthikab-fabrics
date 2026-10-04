@@ -296,3 +296,8 @@
 
 - Client requested three cards per desktop row, shorter width-based product media, and a smooth hover zoom without the current white hover state.
 - Updated and uploaded only the archive collection template and scoped collection CSS. Remote read-back matched local files; Theme Check returned no new errors. Client will perform the browser visual check.
+
+### 2026-10-04 - Collection archive three-card row (Completed)
+
+- Client reports the third product wraps below the first two. Force a scoped three-column CSS grid for archive view and keep list view behavior unchanged.
+- Replaced the archive flex sizing with a responsive scoped CSS Grid and uploaded the fix to the active theme. Client will perform the browser visual check.

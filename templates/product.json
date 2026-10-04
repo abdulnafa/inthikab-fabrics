@@ -179,12 +179,12 @@
         "d1d28115-3998-4f61-8e93-3974d09fe1a0"
       ],
       "settings": {
-        "enable_full_width": true,
+        "enable_full_width": false,
         "enable_sticky_info": true,
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "cover",
-        "gallery_layout": "columns",
+        "gallery_layout": "thumbnail_slider",
         "media_position": "left",
         "image_zoom": "hover",
         "enable_border": false,
@@ -193,9 +193,9 @@
         "shareb": false,
         "enable_compact": false,
         "color_scheme": "background-2",
-        "mobile_thumbnails": "one_columns",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "mobile_thumbnails": "show",
+        "padding_top": 32,
+        "padding_bottom": 56
       }
     },
     "video_fGYYm4": {

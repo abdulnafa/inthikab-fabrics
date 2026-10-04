@@ -2353,3 +2353,226 @@ button.shopify-payment-button__button--hidden{
     gap: 10px;
   }
 }
+
+/* Intikhab premium product page */
+.intikhab-product-page {
+  --pdp-panel-radius: 1.8rem;
+  --pdp-panel-border: rgba(var(--color-foreground), .12);
+  --pdp-panel-shadow: 0 1.2rem 3.2rem rgba(var(--color-foreground), .055);
+}
+
+.intikhab-product-page .main_product:not(.product--no-media) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  column-gap: clamp(2.4rem, 4vw, 6rem);
+  row-gap: 3rem;
+  margin: 0;
+}
+
+.intikhab-product-page .main_product > .product__media-wrapper,
+.intikhab-product-page .main_product > .product__info-wrapper {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  padding: 0;
+}
+
+.intikhab-product-page media-gallery {
+  display: block;
+  padding: clamp(1rem, 1.6vw, 1.6rem);
+  border: 1px solid var(--pdp-panel-border);
+  border-radius: var(--pdp-panel-radius);
+  background: rgb(var(--color-background));
+  box-shadow: var(--pdp-panel-shadow);
+}
+
+.intikhab-product-page .productpart,
+.intikhab-product-page .productpart_1 {
+  display: block;
+  width: 100%;
+}
+
+.intikhab-product-page .product__media-list {
+  margin: 0;
+  padding: 0;
+}
+
+.intikhab-product-page .product--thumbnail_slider .product__media-item.is-active {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+}
+
+.intikhab-product-page .product-media-container {
+  width: 100%;
+  max-width: none;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3;
+  overflow: hidden !important;
+  border: 0;
+  border-radius: 1.2rem;
+  background: rgba(var(--color-foreground), .035);
+  box-shadow: none;
+}
+
+.intikhab-product-page .product-media-container.constrain-height {
+  --constrained-min-height: 0px;
+  --constrained-height: auto;
+  height: auto;
+}
+
+.intikhab-product-page .product-media-container .product__modal-opener,
+.intikhab-product-page .product-media-container > .deferred-media,
+.intikhab-product-page .product-media-container > product-model {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.intikhab-product-page .product-media-container .product__media.media,
+.intikhab-product-page .product-media-container .deferred-media,
+.intikhab-product-page .product-media-container product-model {
+  height: 100%;
+  padding-top: 0 !important;
+  border-radius: inherit;
+}
+
+.intikhab-product-page .product-media-container .product__media img,
+.intikhab-product-page .product-media-container .deferred-media__poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s cubic-bezier(.2, .65, .3, 1);
+}
+
+.intikhab-product-page .product-media-container:hover .product__media img,
+.intikhab-product-page .product-media-container:focus-within .product__media img {
+  transform: scale(1.025);
+}
+
+.intikhab-product-page .productpart_2 {
+  margin-top: 1.25rem;
+}
+
+.intikhab-product-page .thumbnail-slider {
+  gap: .8rem;
+}
+
+.intikhab-product-page .thumbnail-list.slider--tablet-up {
+  gap: .8rem;
+  padding: 0;
+}
+
+.intikhab-product-page .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
+  width: calc(20% - .65rem);
+}
+
+.intikhab-product-page .thumbnail {
+  border: 1px solid rgba(var(--color-foreground), .13) !important;
+  border-radius: .85rem;
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.intikhab-product-page .thumbnail:hover,
+.intikhab-product-page .thumbnail[aria-current='true'] {
+  border-color: rgb(var(--color-foreground)) !important;
+  box-shadow: 0 0 0 .2rem rgb(var(--color-background)), 0 0 0 .3rem rgba(var(--color-foreground), .45);
+  transform: translateY(-2px);
+}
+
+.intikhab-product-page .product__info-container {
+  padding: clamp(1.8rem, 3vw, 3.6rem);
+  border: 1px solid var(--pdp-panel-border);
+  border-radius: var(--pdp-panel-radius);
+  background: rgb(var(--color-background));
+  box-shadow: var(--pdp-panel-shadow);
+}
+
+.intikhab-product-page .product__info-container > * + * {
+  margin-top: 2rem;
+}
+
+.intikhab-product-page .product__info-container .product__title h1,
+.intikhab-product-page .product__info-container .product__title.h1 {
+  margin: 0;
+  font-size: clamp(2.6rem, 3vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -.025em;
+}
+
+.intikhab-product-page .product__info-container .price .price-item {
+  font-size: clamp(2rem, 2.2vw, 2.8rem);
+  font-weight: 600;
+}
+
+.intikhab-product-page .product__info-container .product-form__input {
+  margin: 0;
+}
+
+.intikhab-product-page .product__info-container .product-form__input .form__label,
+.intikhab-product-page .product__info-container .product-form__quantity .form__label {
+  margin-bottom: .8rem;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.intikhab-product-page .product__info-container .product-form__input input[type='radio'] + label {
+  min-height: 4.2rem;
+  padding: .9rem 1.3rem;
+  border-radius: .65rem;
+  font-size: 1.35rem;
+  transition: background .25s ease, border-color .25s ease, color .25s ease;
+}
+
+.intikhab-product-page .product__info-container .product-form__input input[type='radio']:checked + label {
+  border-color: rgb(var(--color-foreground));
+  background: rgba(var(--color-foreground), .06);
+  color: rgb(var(--color-foreground));
+}
+
+.intikhab-product-page .product__info-container .product-form__quantity .quantity {
+  min-height: 4.6rem;
+  border-radius: 999px;
+}
+
+.intikhab-product-page .product__info-container .product-form__buttons .product-form__submit {
+  min-height: 5.2rem;
+  border-radius: 999px;
+  letter-spacing: .08em;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 991px) {
+  .intikhab-product-page .main_product:not(.product--no-media) {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2.4rem;
+  }
+
+  .intikhab-product-page .product__info-container {
+    padding: 2rem;
+  }
+
+  .intikhab-product-page media-gallery {
+    position: static;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .intikhab-product-page media-gallery {
+    padding: .8rem;
+    border-radius: 1.2rem;
+  }
+
+  .intikhab-product-page .product-media-container {
+    border-radius: .8rem;
+  }
+
+  .intikhab-product-page .product__info-container {
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+  }
+}
